@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Muhammad Mikran Sandhu</title>
+    <!-- icons -->
+    <link rel="icon" href="https://i.pinimg.com/736x/f6/3f/4c/f63f4c2b21694578d39deaae47c73f4c.jpg">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="all.css">
+    <style>
+        /* Add WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0.95;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+            border-color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .whatsapp-float i {
+            font-size: 24px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .whatsapp-float span {
+            font-weight: 500;
+            font-size: 0.95em;
+            color: var(--text-primary);
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 15px;
+            }
+            
+            .whatsapp-float span {
+                display: none;
+            }
+            
+            .whatsapp-float i {
+                font-size: 28px;
+            }
+        }
+
+        /* Add new animation keyframes */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatIn {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+        }
+
+        /* Enhanced section styles */
+        .section {
+            position: relative;
+            overflow: hidden;
+            animation: floatIn 1s ease-out;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .section:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Add scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add 3D hover effect to cards */
+        .card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+        }
+
+        /* Add particle background effect */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        } /* About Section Responsive Styles */
+    @media (max-width: 1200px) {
+        .about-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 0 30px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .about-container {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+        }
+
+        .about-content {
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-container {
+            padding: 0 20px;
+            gap: 25px;
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+        }
+
+        .about-content p {
+            font-size: 0.95rem;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-container {
+            padding: 0 15px;
+            gap: 20px;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+        }
+
+        .about-content h2 {
+            font-size: 1.6rem;
+        }
+
+        .about-content p {
+            font-size: 0.9rem;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .stat-item {
+            padding: 15px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Animation Classes */
+    .animate-float {
+        animation: floatIn 1s ease-out;
+    }
+
+    .animate-scale {
+        animation: scaleIn 0.6s ease-out;
+    }
+
+    .animate-slide-left {
+        animation: slideInLeft 0.6s ease-out;
+    }
+
+    .animate-slide-right {
+        animation: slideInRight 0.6s ease-out;
+    }
+
+    .animate-glow {
+        animation: glowPulse 2s ease-in-out infinite;
+    }
+
+    .animate-gradient {
+        animation: gradientFlow 3s ease infinite;
+    }
+
+    /* Apply animations to elements */
+    .section {
+        animation: floatIn 1s ease-out;
+    }
+
+    .profile-image-container {
+        animation: scaleIn 0.8s ease-out;
+    }
+
+    .about-content {
+        animation: slideInLeft 1s ease-out;
+    }
+
+    .stats-grid {
+        animation: slideInRight 1s ease-out;
+    }
+
+    .expertise-card {
+        animation: scaleIn 0.6s ease-out backwards;
+    }
+
+    .expertise-card:nth-child(odd) {
+        animation-delay: 0.2s;
+    }
+
+    .expertise-card:nth-child(even) {
+        animation-delay: 0.4s;
+    }
+
+    .interest-card {
+        animation: scaleIn 0.6s ease-out backwards;
+    }
+
+    .interest-card:nth-child(odd) {
+        animation-delay: 0.2s;
+    }
+
+    .interest-card:nth-child(even) {
+        animation-delay: 0.4s;
+    }
+    </style>
+</head>
+<body>
+    <!-- Add WhatsApp Button -->
+    <a href="https://wa.me/923494206922" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>For Website</span>
+    </a>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text" >MMS</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link active">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <a href="skills.html" class="nav-link">
+                    <i class="fas fa-code"></i> Skills
+                </a>
+                <a href="project.html" class="nav-link">
+                    <i class="fa-solid fa-diagram-project"></i> Projects
+                </a>
+                <a href="experience.html" class="nav-link">
+                    <i class="fas fa-briefcase"></i> Experience
+                </a>
+                <a href="education.html" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="profile-image-container">
+                <img src="https://i.pinimg.com/736x/f6/3f/4c/f63f4c2b21694578d39deaae47c73f4c.jpg" alt="Muhammad Mikran Sandhu" class="profile-image">
+                <div class="profile-overlay"></div>
+            </div>
+            <h1 class="hero-title">Muhammad Mikran Sandhu</h1>
+            <p class="hero-subtitle">Frontend Developer & Digital Creator</p>
+            <div class="hero-social">
+                <a href="https://www.linkedin.com/in/m-mikran-sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/M-Mikran-Sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://taplink.cc/mmikransandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <i class="fa-brands fa-meetup"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Get to know more about my journey and passion</p>
+        </div>
+
+        <div class="about-container">
+            <div class="about-content">
+                <p class="about-text">
+                    I am a passionate Frontend Developer and Digital Creator based in Gujranwala, Pakistan. With a strong foundation in web development and a keen eye for design, I create engaging digital experiences that combine functionality with aesthetic appeal.
+                </p>
+                <p class="about-text">
+                    My journey in technology began with a curiosity for creating things on the web. This curiosity evolved into a professional career where I've had the opportunity to work on diverse projects, from e-commerce platforms to portfolio websites.
+                </p>
+                <p class="about-text">
+                    I believe in continuous learning and staying updated with the latest technologies and trends in web development. My goal is to create websites that not only look great but also provide an exceptional user experience.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise-section">
+        <div class="section-title">
+            <h2>My Expertise</h2>
+            <p>Areas where I excel and bring value</p>
+        </div>
+
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Creating responsive and dynamic websites using modern technologies</p>
+            </div>
+            <div class="expertise-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Designing intuitive and engaging user interfaces</p>
+            </div>
+            <div class="expertise-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile-First Design</h3>
+                <p>Ensuring optimal user experience across all devices</p>
+            </div>
+            <div class="expertise-card">
+                <i class="fas fa-search"></i>
+                <h3>SEO Optimization</h3>
+                <p>Improving website visibility and search engine rankings</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="interests-section">
+        <div class="section-title">
+            <h2>Personal Interests</h2>
+            <p>What I enjoy beyond coding</p>
+        </div>
+
+        <div class="interests-grid">
+            <div class="interest-card">
+                <i class="fas fa-book"></i>
+                <h3>Reading</h3>
+                <p>Tech blogs and programming books</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Gaming</h3>
+                <p>Strategy and puzzle games</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-camera"></i>
+                <h3>Photography</h3>
+                <p>Nature and street photography</p>
+            </div>
+            <div class="interest-card">
+                <i class="fas fa-music"></i>
+                <h3>Music</h3>
+                <p>Playing guitar and listening to various genres</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Let's Work Together</h2>
+            <p>Have a project in mind? I'd love to hear about it!</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <div class="diiiv">
+                        <a href="https://zcal.co/muhammad-mikran">
+                        <div class="bg-sky-700 rounded-2xl shadow-sm shadow-sky-500 outline outline-slate-400 -outline-offset-8">
+                            <div class="group overflow-hidden relative after:duration-500 before:duration-500  duration-500 hover:after:duration-500 hover:after:translate-x-24 hover:before:translate-y-12 hover:before:-translate-x-32 hover:duration-500 after:absolute after:w-24 after:h-24 after:bg-sky-700 after:rounded-full  after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12  before:absolute before:w-20 before:h-20 before:bg-sky-400 before:rounded-full  before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12  hover:rotate-12 flex justify-center items-center h-56 w-80  bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8">
+                              <div class="z-10 flex flex-col items-center gap-2">
+                                <span class="text-slate-400 text-6xl font-bold">MMS </span>
+                                <p class="text-gray-50">Frontend developer</p>
+                              </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Gujranwala, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 321 7112944</p>
+                    <p><i class="fas fa-envelope"></i> sandhumikran@gmail.com</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/m-mikran-sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/M-Mikran-Sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://taplink.cc/mmikransandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fa-brands fa-meetup"></i>
+                        </a>
+                        <a href="mailto:sandhumikran@gmail.com" class="social-link" rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Muhammad Mikran Sandhu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger menu
+            menuToggle.classList.toggle('active');
+        });
+
+        // Active Link Highlighting
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksAll.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu when link is clicked
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="XMu27tiEkhnCS0bXQzKZJ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+    <!-- Add particles.js before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#2ecc71' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2ecc71',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Add scroll reveal functionality
+        const revealElements = document.querySelectorAll('.section, .expertise-card, .interest-card, .stat-item');
+        
+        function reveal() {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Add smooth parallax effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollPosition = window.scrollY;
+            header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+    </script>
+</body>
+</html> 

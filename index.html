@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Mikran Sandhu - Web Developer & Designer</title>
+    <!-- icons -->
+    <link rel="icon" href="https://i.pinimg.com/736x/f6/3f/4c/f63f4c2b21694578d39deaae47c73f4c.jpg">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css -->
+    <style>
+        
+               /* Updated Root Variables */
+            :root {
+            --primary-color: #000000;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --dark-bg: #000000;
+            --darker-bg: #0a0a0a;
+            /* Slightly more transparent for better layering */
+            --nav-bg: rgba(0, 0, 0, 0.85);
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #bbbbbb;
+            --link-hover: #2ecc71;
+            --gradient: linear-gradient(135deg, #3498db, #2ecc71);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --border-radius-sm: 12px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            --section-padding: 100px;
+            --card-padding: 30px;
+            /* Define navbar height for scroll padding */
+            --navbar-height: 80px;
+        }
+
+        /* Updated Body Styles */
+        body {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            margin: 0;
+            /* Adjusted padding-top */
+            padding-top: var(--navbar-height);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Added a default font stack */
+            line-height: 1.6; /* Improved readability */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            /* Consistent horizontal padding */
+            padding: 0 20px;
+        }
+
+        /* --- Updated Navbar Styles --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            color: var(--text-primary);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--card-border);
+            /* Use variable for height consistency */
+            min-height: var(--navbar-height);
+            display: flex; /* Use flex to center container vertically */
+            align-items: center; /* Center nav-container vertically */
+            padding: 0; /* Remove padding here, apply to container */
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            width: 100%; /* Ensure container takes full width */
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Consistent horizontal padding */
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Removed padding here, handled by alignment */
+            color: var(--text-primary); /* Fallback color */
+            transition: font-size 0.3s ease; /* Smooth transition for responsive */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem; /* Reduced gap slightly */
+            align-items: center;
+            list-style: none; /* Remove default list styles if using ul */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--text-primary) !important;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1rem; /* Adjusted padding */
+            border-radius: var(--border-radius-md);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid transparent;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease; /* Smooth icon color transition */
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(46, 204, 113, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            color: var(--accent-color) !important; /* Make text green on hover/active */
+        }
+
+        .nav-link:hover i,
+        .nav-link.active i {
+             color: var(--accent-color); /* Make icon green on hover/active */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; /* Position slightly below */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+            border-radius: 1px; /* Slightly rounded ends */
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 70%; /* Adjusted width */
+        }
+
+        /* Scroll Animation */
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95); /* Darker on scroll */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            /* Optionally reduce height slightly on scroll */
+            /* min-height: calc(var(--navbar-height) - 10px); */
+        }
+
+        /* --- End Navbar Styles --- */
+
+
+        /* --- Mobile Menu Toggle --- */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-around; /* Even spacing */
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001; /* Above nav links */
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            display: block; /* Ensure spans are block */
+            width: 100%;
+            height: 3px; /* Slightly thicker */
+            background-color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Added easing */
+            border-radius: var(--border-radius-sm);
+            transform-origin: center; /* Rotate around center */
+        }
+
+        /* Mobile Menu Animation */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg); /* Adjusted transform */
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px); /* Fade out left */
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg); /* Adjusted transform */
+        }
+        /* --- End Mobile Menu Toggle --- */
+
+
+        /* --- Updated Section Styles --- */
+        .section {
+            padding: var(--section-padding) 0;
+            margin: 2rem 0;
+            background: var(--darker-bg);
+            border-radius: var(--border-radius-xl);
+            border: 1px solid var(--card-border);
+            overflow: hidden; /* Contain potential overflows */
+        }
+
+        /* Alternating background for visual rhythm */
+        .section:nth-of-type(even) {
+           /* background: var(--dark-bg); */ /* Optional: slightly different bg for even sections */
+        }
+
+        /* Updated Card Styles */
+        .skill-card,
+        .experience-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: var(--card-padding);
+            margin-bottom: 1.5rem; /* Changed from margin: 1.5rem 0 */
+            border: 1px solid var(--card-border);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
+        }
+         /* Remove margin top/bottom from first/last items in containers */
+        .skills-grid > .skill-card:first-child,
+        .timeline > .experience-item:first-child {
+            margin-top: 0;
+        }
+        .skills-grid > .skill-card:last-child,
+        .timeline > .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .skill-card:hover,
+        .experience-item:hover {
+            transform: translateY(-5px) scale(1.01); /* Subtle scale */
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.1);
+        }
+
+        /* Updated Header Styles */
+        header {
+            /* background: var(--darker-bg); */
+            background-image: url("https://i.pinimg.com/736x/df/b3/1f/dfb31f5531e31a6e07f4f8f8a8063769.jpg");
+            background-size:cover;
+            padding: calc(var(--section-padding) * 1.2) 0 var(--section-padding);
+            /* Removed negative margin-top which caused overlap issues */
+            border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--card-border); /* Consistent border */
+            border-top: none; /* Remove top border as it connects to nothing */
+            z-index: -10;
+            
+        }
+        header .container{
+            z-index:1;
+            position: relative;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none; /* Prevent interaction */
+        }
+
+        /* Updated Profile Image (If you add one later) */
+        .profile-image {
+            /* Styles for a potential profile image */
+            width: 150px; /* Example size */
+            height: 150px;
+            border-radius: 50%; /* Circular image */
+            border: 3px solid transparent;
+            background: var(--gradient);
+            padding: 3px;
+            transition: all 0.5s ease;
+            margin: 0 auto 2rem; /* Center and add space below */
+            display: block; /* Needed for margin auto */
+            object-fit: cover; /* Ensure image covers the area */
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Updated Contact Info */
+        .contact-info {
+            background: var(--card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: var(--card-padding);
+            margin-top: 2rem;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text-primary);
+            max-width: 500px; /* Limit width */
+            margin-left: auto; /* Center if header content is wider */
+            margin-right: auto;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem; /* Spacing between items */
+            color: var(--text-secondary); /* Use secondary text color */
+        }
+         .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-info i {
+             color: var(--accent-color);
+             width: 20px; /* Fixed width for alignment */
+             text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--text-primary); /* Make links stand out slightly */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color); /* Use accent color on hover */
+            text-decoration: underline;
+        }
+
+
+        /* Timeline Updates */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto 0; /* Add top margin */
+            padding-left: 40px; /* Space for the line and dots */
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px; /* Position the line */
+            top: 0;
+            bottom: 0;
+            width: 4px; /* Line thickness */
+            background: var(--gradient);
+            opacity: 0.15; /* Subtle line */
+            border-radius: var(--border-radius-sm);
+        }
+
+        .experience-item {
+            position: relative;
+            /* Removed margin-left, handled by timeline padding */
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            /* Position dot relative to the item's padding box, adjusted for timeline line */
+            left: -33px;
+            top: 35px; /* Align vertically with date/title */
+            width: 14px; /* Dot size */
+            height: 14px;
+            border-radius: 50%;
+            background: var(--gradient);
+            border: 3px solid var(--darker-bg); /* Make dot pop from line */
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+            z-index: 1; /* Above the timeline line */
+        }
+
+        .experience-item.active::before {
+            animation: pulse 2s infinite ease-in-out; /* Smoother pulse */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); }
+            50% { transform: scale(1.2); box-shadow: 0 0 15px rgba(46, 204, 113, 0.6); } /* Pulse to accent color */
+            100% { transform: scale(1); box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); }
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px); /* Subtle shift */
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.1);
+        }
+
+
+        .experience-date {
+            background: var(--gradient);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--border-radius-md);
+            font-weight: 600; /* Bolder date */
+            color: var(--text-primary);
+            display: inline-block; /* Prevent taking full width */
+            margin-bottom: 1rem; /* Space below date */
+            font-size: 0.9em; /* Slightly smaller date */
+        }
+
+        /* --- End Timeline --- */
+
+        /* --- Footer --- */
+        footer {
+            background: var(--darker-bg);
+            border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+            padding: 60px 0 30px;
+            margin-top: 4rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-primary);
+        }
+
+        
+
+        .footer-main {
+            display: grid;
+            justify-content: space-between;
+            /* Adjusted columns for potentially more content */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 30px; /* Space before divider */
+        }
+
+        .footer-logo{
+            margin-left: 40px;
+        }
+
+         
+
+        .footer-contact h4,
+        .footer-social h4 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative; /* For underline */
+            padding-bottom: 8px; /* Space for underline */
+        }
+
+        /* Underline for footer headings */
+        .footer-contact h4::after,
+        .footer-social h4::after {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 40px;
+             height: 2px;
+             background: var(--gradient);
+             border-radius: 1px;
+        }
+
+
+        .footer-contact p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .footer-contact i {
+            color: var(--accent-color);
+            width: 18px; /* Alignment */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+         .footer-contact p:hover i {
+            transform: scale(1.2);
+        }
+
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping if many icons */
+            gap: 15px;
+            justify-content: flex-start; /* Default alignment */
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+            text-decoration: none; /* Remove underline from icons */
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px) scale(1.05); /* Combined effect */
+            border-color: var(--accent-color);
+            background: rgba(46, 204, 113, 0.1); /* Subtle bg on hover */
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: var(--card-border);
+            margin: 30px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted); /* Muted color for copyright */
+            font-size: 0.9rem;
+        }
+
+        /* --- End Footer --- */
+
+
+        /* General Text & Content Styles */
+        .profile-info h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem); /* Responsive font size */
+            margin-bottom: 10px;
+            background: var(--gradient); /* Apply gradient to main heading */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center; /* Center header text */
+        }
+
+        .profile-info p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+            margin-bottom: 20px; /* More space */
+            color: var(--text-secondary);
+            text-align: center; /* Center header text */
+            max-width: 700px; /* Limit width of subtitle */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Headers */
+        h2 {
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 2.5em); /* Responsive font size */
+            margin-bottom: 40px; /* Increased spacing */
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-bottom: none !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            
+            -webkit-text-fill-color: unset !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px; /* Space for underline */
+            text-align: center; /* Center section headers */
+            display: block; /* Make it block to center */
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%; /* Center the underline */
+            transform: translateX(-50%) scaleX(0.3); /* Center origin */
+            width: 80px; /* Fixed width underline */
+            height: 3px;
+            background: #ffffff;
+            transform-origin: center; /* Scale from center */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 1.5px;
+        }
+
+        h2:hover {
+            color: var(--accent-color);
+            /* transform: translateX(5px); */ /* Removed side shift for centered text */
+            text-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+        }
+
+        h2:hover::after {
+            transform: translateX(-50%) scaleX(1); /* Expand from center */
+            background: var(--accent-color);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            /* Adjusted minmax for slightly larger cards */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.3em; /* Slightly larger skill category title */
+            border-bottom: 1px solid var(--card-border); /* Divider */
+            padding-bottom: 10px;
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0; /* Remove default margin */
+        }
+
+        .skill-card li {
+            margin-bottom: 12px; /* Increased spacing */
+            padding-left: 25px; /* More space for icon */
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .skill-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-card li:before {
+            content: "\f138"; /* FontAwesome checkmark or arrow, e.g., f00c or f138 */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.1em; /* Adjust icon size */
+        }
+
+        /* Experience Section Specifics */
+        .experience-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 5px; /* Reduced space */
+            font-size: 1.3em;
+        }
+         .experience-item h4 { /* Styling for company name */
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1em;
+         }
+
+        .experience-item p,
+        .experience-item li {
+            margin: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.7; /* Improved readability for descriptions */
+        }
+
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px; /* Indent list */
+            list-style-type: disc; /* Use standard bullets */
+        }
+         .experience-item ul li::marker {
+             color: var(--accent-color); /* Style bullet points */
+         }
+
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+             /* Adjust padding for tablets */
+            .section {
+                 padding: calc(var(--section-padding) * 0.8) 0;
+            }
+            header {
+                 padding: calc(var(--section-padding) * 1) 0 calc(var(--section-padding) * 0.8);
+            }
+            .skills-grid {
+                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            /* --- Responsive Navbar --- */
+             :root {
+                 --navbar-height: 70px; /* Slightly shorter navbar on mobile */
+             }
+             body {
+                 padding-top: var(--navbar-height); /* Update body padding */
+             }
+             .navbar {
+                 /* No padding change needed as container handles it */
+                 min-height: var(--navbar-height); /* Apply mobile height */
+             }
+             .nav-container {
+                 /* Consistent padding already set */
+             }
+             .logo-text {
+                 font-size: 1.6rem; /* Slightly smaller logo */
+             }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger */
+            }
+
+            .nav-links {
+                position: fixed;
+                /* Position below navbar */
+                top: var(--navbar-height);
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98); /* Darker, less transparent */
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem 0; /* Vertical padding only */
+                gap: 0; /* Remove gap, use padding/margin on links */
+                display: none; /* Controlled by JS */
+                border-bottom: 1px solid var(--card-border);
+                border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+                /* Smooth slide-down effect */
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+                max-height: calc(100vh - var(--navbar-height)); /* Limit height */
+                overflow-y: auto; /* Allow scrolling if needed */
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                padding: 1rem 1.5rem; /* Generous padding for tapping */
+                border-radius: 0; /* Full width, no rounding needed */
+                border: none; /* Remove border */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Subtle separator */
+            }
+             .nav-links li:last-child .nav-link { /* Remove border from last item */
+                 border-bottom: none;
+             }
+
+            .nav-link:hover,
+            .nav-link.active {
+                 background: rgba(46, 204, 113, 0.15); /* Slightly stronger hover */
+                 border-color: transparent; /* No border change */
+                 transform: none; /* Disable hover transform */
+                 color: var(--accent-color) !important; /* Ensure color change */
+            }
+             .nav-link:hover i,
+             .nav-link.active i {
+                  color: var(--accent-color); /* Ensure icon color change */
+             }
+            .nav-link::after {
+                display: none; /* Hide underline on mobile */
+            }
+            /* --- End Responsive Navbar --- */
+
+
+            /* --- Responsive Sections --- */
+            .section {
+                margin: 1rem 0;
+                padding: calc(var(--section-padding) / 1.5) 0; /* Reduced padding */
+                border-radius: var(--border-radius-lg); /* Slightly smaller radius */
+            }
+            header {
+                 padding: calc(var(--section-padding) * 0.8) 0 calc(var(--section-padding) / 1.5);
+                 border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+            }
+            h2 {
+                 font-size: clamp(1.8rem, 5vw, 2.2em);
+                 margin-bottom: 30px;
+            }
+            h2::after {
+                 width: 60px; /* Smaller underline */
+                 height: 2px;
+            }
+             .profile-info h1 {
+                 font-size: clamp(2rem, 6vw, 2.5rem);
+             }
+             .profile-info p {
+                  font-size: clamp(0.95rem, 3vw, 1.1rem);
+             }
+
+            /* --- Responsive Timeline --- */
+             .timeline {
+                 padding-left: 30px; /* Reduce left padding */
+                 margin-top: 30px;
+             }
+             .timeline::before {
+                 left: 10px; /* Move line closer */
+                 width: 3px;
+             }
+             .experience-item {
+                 padding: 25px; /* Reduce padding */
+             }
+             .experience-item::before {
+                 left: -22px; /* Adjust dot position */
+                 top: 30px;
+                 width: 12px;
+                 height: 12px;
+                 border-width: 2px;
+             }
+              .experience-item:hover {
+                  transform: none; /* Disable hover transform on mobile */
+              }
+
+
+            /* --- Responsive Footer --- */
+            footer {
+                padding: 40px 0 20px;
+                margin-top: 2rem;
+                border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+            }
+
+            .footer-main {
+                /* Change from grid to flex column */
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center items horizontally */
+                gap: 35px; /* Adjust vertical gap */
+                text-align: center; /* Center text within items */
+            }
+
+             /* Ensure each footer section takes appropriate width and centers its content */
+            .footer-logo,
+            .footer-contact,
+            .footer-social {
+                width: 100%;
+                max-width: 400px; /* Optional: prevent sections from becoming too wide */
+                text-align: center;
+            }
+
+            .footer-contact h4,
+            .footer-social h4 {
+                text-align: center; /* Ensure headings are centered */
+            }
+            .footer-contact h4::after,
+            .footer-social h4::after {
+                 left: 50%; /* Center underline */
+                 transform: translateX(-50%);
+            }
+
+            .footer-contact p {
+                 justify-content: center; /* Center contact items (icon + text) */
+            }
+
+            .social-links {
+                justify-content: center; /* Center social icons */
+            }
+             /* --- End Responsive Footer --- */
+
+        } /* End @media (max-width: 768px) */
+
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient);
+            border-radius: var(--border-radius-sm);
+            border: 2px solid var(--dark-bg); /* Add border to thumb */
+        }
+         ::-webkit-scrollbar-thumb:hover {
+              background: linear-gradient(135deg, #4ca9e3, #3eed8a); /* Slightly brighter on hover */
+         }
+
+
+        /* General Text Colors & Overrides */
+        * {
+            box-sizing: border-box; /* Better layout control */
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--navbar-height); /* Use variable for scroll padding */
+        }
+
+        body, p, span, li, a, h1, h2, h3, h4, h5, h6 /* Ensure all text defaults correctly */ {
+            color: var(--text-primary);
+        }
+
+        p, span, li {
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none; /* Remove default underline */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--link-hover);
+        }
+
+        /* Specific overrides where needed */
+        .experience-item p,
+        .experience-item li,
+        .skill-card li,
+        .contact-info p,
+        .contact-info a,
+        footer p {
+            color: var(--text-secondary); /* Ensure these use secondary text */
+        }
+
+         footer .footer-bottom p {
+             color: var(--text-muted); /* Use muted for copyright */
+         }
+
+        .contact-info i,
+        .footer-contact i {
+            color: var(--accent-color); /* Ensure icons have accent color */
+        }
+
+        /* Selection Highlight */
+        ::selection {
+            background: var(--accent-color);
+            color: var(--text-primary);
+        }
+
+        ::-moz-selection {
+            background: var(--accent-color);
+            color: var(--text-primary);
+        }
+
+         /* Reduced Motion Preference */
+        @media screen and (prefers-reduced-motion: reduce) {
+            html {
+                 scroll-behavior: auto; /* Disable smooth scroll */
+             }
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+                /* Optionally disable transforms too */
+                /* transform: none !important; */
+            }
+             .menu-toggle.active span:nth-child(1),
+             .menu-toggle.active span:nth-child(3) {
+                  /* Minimal transform for X shape */
+                  transform: rotate(0deg); /* Keep basic shape if needed */
+             }
+              .menu-toggle.active span:nth-child(2) {
+                   opacity: 1; /* Keep middle bar visible */
+              }
+        }
+        
+        /* ------circle----*/ 
+        .svg-frame {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .svg-frame svg {
+        position: absolute;
+        transition: 0.5s;
+        z-index: calc(1 - (0.2 * var(--j)));
+        transform-origin: center;
+        width: 344px;
+        height: 344px;
+        fill: none;
+        }
+
+        .svg-frame:hover svg {
+        transform: rotate(10deg) skew(15deg) translateX(calc(45px * var(--i)))
+            translateY(calc(-35px * var(--i)));
+        }
+
+        .svg-frame svg #center {
+        transition: 0.5s;
+        transform-origin: center;
+        }
+
+        .svg-frame:hover svg #center {
+        transform: rotate(-30deg) translateX(45px) translateY(-3px);
+        }
+
+        #out2 {
+        animation: rotate16 2s ease-in-out infinite alternate;
+        transform-origin: center;
+        stroke: white;
+        }
+
+        #out3 {
+        animation: rotate16 2s ease-in infinite normal;
+        transform-origin: center;
+        stroke: #ff0;
+        }
+
+        #inner3,
+        #inner1 {
+        animation: rotate16 0.5s ease-in-out infinite alternate;
+        transform-origin: center;
+        }
+
+        #center1 {
+        fill: #ff0;
+        animation: rotate16 0.5s ease-out infinite normal;
+        transform-origin: center;
+        }
+
+        @keyframes rotate16 {
+        to {
+            transform: rotate(360deg);
+        }
+        }
+        /* ------diiiv----- */
+        .diiiv{
+            width: 320px;
+            height: 300px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Add WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0.95;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+            border-color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .whatsapp-float i {
+            font-size: 24px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .whatsapp-float span {
+            font-weight: 500;
+            font-size: 0.95em;
+            color: var(--text-primary);
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 15px;
+            }
+            
+            .whatsapp-float span {
+                display: none;
+            }
+            
+            .whatsapp-float i {
+                font-size: 28px;
+            }
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Apply animations to elements */
+        .profile-info h1 {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .profile-info p {
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        .contact-info {
+            animation: scaleIn 1s ease-out 0.6s backwards;
+        }
+
+        .nav-link {
+            animation: fadeIn 0.5s ease-out backwards;
+        }
+
+        .nav-link:nth-child(1) { animation-delay: 0.1s; }
+        .nav-link:nth-child(2) { animation-delay: 0.2s; }
+        .nav-link:nth-child(3) { animation-delay: 0.3s; }
+        .nav-link:nth-child(4) { animation-delay: 0.4s; }
+        .nav-link:nth-child(5) { animation-delay: 0.5s; }
+        .nav-link:nth-child(6) { animation-delay: 0.6s; }
+        .nav-link:nth-child(7) { animation-delay: 0.7s; }
+
+        .logo-text {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .social-link {
+            animation: float 3s infinite ease-in-out;
+        }
+
+        .social-link:nth-child(1) { animation-delay: 0s; }
+        .social-link:nth-child(2) { animation-delay: 0.2s; }
+        .social-link:nth-child(3) { animation-delay: 0.4s; }
+        .social-link:nth-child(4) { animation-delay: 0.6s; }
+
+        .footer-contact p {
+            animation: slideInLeft 0.5s ease-out backwards;
+        }
+
+        .footer-contact p:nth-child(1) { animation-delay: 0.1s; }
+        .footer-contact p:nth-child(2) { animation-delay: 0.2s; }
+        .footer-contact p:nth-child(3) { animation-delay: 0.3s; }
+
+        .footer-social h4 {
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        /* Hover animations */
+        .nav-link:hover {
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        .social-link:hover {
+            animation: pulse 0.5s ease-in-out;
+        }
+
+        /* Reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+
+        /* Add new animation keyframes */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatIn {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+        }
+
+        /* Enhanced header styles */
+        header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+            background-size: 200% 200%;
+            animation: gradientFlow 15s ease infinite;
+            z-index: 0;
+        }
+
+        .profile-info h1 {
+            animation: floatIn 1s ease-out;
+            text-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+        }
+
+        .profile-info p {
+            animation: floatIn 1s ease-out 0.3s backwards;
+        }
+
+        /* Enhanced section styles */
+        .section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .section:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Enhanced skill cards */
+        .skill-card {
+            animation: scaleIn 0.6s ease-out backwards;
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+        }
+
+        .skill-card h3 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .skill-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.4s ease;
+        }
+
+        .skill-card:hover h3::after {
+            width: 100%;
+        }
+
+        /* Enhanced experience items */
+        .experience-item {
+            animation: slideInLeft 0.6s ease-out backwards;
+            transition: all 0.4s ease;
+        }
+
+        .experience-item:nth-child(even) {
+            animation: slideInRight 0.6s ease-out backwards;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+        }
+
+        .experience-date {
+            animation: glowPulse 2s infinite;
+        }
+
+        /* Enhanced social links */
+        .social-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced navigation */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        /* Add scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add 3D hover effect to cards */
+        .skill-card, .experience-item {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .skill-card:hover, .experience-item:hover {
+            transform: rotateX(5deg) rotateY(5deg);
+        }
+
+        /* Add particle background effect */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .profile-info h1 {
+                font-size: 2.5rem;
+            }
+
+            .profile-info p {
+                font-size: 1.1rem;
+            }
+
+            .contact-info {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --navbar-height: 70px;
+                --section-padding: 60px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            .section {
+                padding: 50px 0;
+                margin: 1rem 0;
+                border-radius: var(--border-radius-lg);
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .profile-info p {
+                font-size: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .skill-card {
+                padding: 20px;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .experience-item {
+                padding: 20px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 15px;
+            }
+
+            .whatsapp-float span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --navbar-height: 60px;
+                --section-padding: 40px;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .profile-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .profile-info p {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .skill-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .experience-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .experience-date {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .footer-main {
+                gap: 20px;
+            }
+
+            .social-link {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .whatsapp-float {
+                bottom: 15px;
+                left: 15px;
+                padding: 8px;
+            }
+
+            .whatsapp-float i {
+                font-size: 24px;
+            }
+        }
+
+        /* Improved Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-links {
+                padding: 1rem 0;
+            }
+
+            .nav-link {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
+            }
+
+            .nav-link i {
+                font-size: 1rem;
+            }
+        }
+
+        /* Improved Mobile Footer */
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-contact p {
+                justify-content: center;
+            }
+
+            .footer-contact h4::after,
+            .footer-social h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Section Title Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--text-primary);
+            font-size: clamp(2rem, 4vw, 2.5em);
+            margin-bottom: 15px;
+            position: relative;
+            display: block;
+            transition: all 0.3s ease;
+            border-bottom: none !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0.3);
+            width: 80px;
+            height: 3px;
+            background: var(--text-primary);
+            transform-origin: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 1.5px;
+        }
+
+        .section-title h2:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .section-title h2:hover::after {
+            transform: translateX(-50%) scaleX(1);
+            background: var(--accent-color);
+        }
+
+        /* Responsive styles for section titles */
+        @media (max-width: 768px) {
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: clamp(1.8rem, 3vw, 2.2em);
+            }
+            
+            .section-title p {
+                font-size: 1em;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: clamp(1.5rem, 2.5vw, 2em);
+            }
+            
+            .section-title p {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add WhatsApp Button -->
+    </style>
+</head>
+<body>
+    <!-- Add WhatsApp Button -->
+    <a href="https://wa.me/923494206922" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>For Website</span>
+    </a>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text" >MMS</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <a href="skills.html" class="nav-link">
+                    <i class="fas fa-code"></i> Skills
+                </a>
+                <a href="project.html" class="nav-link">
+                    <i class="fa-solid fa-diagram-project"></i> Projects
+                </a>
+                <a href="experience.html" class="nav-link">
+                    <i class="fas fa-briefcase"></i> Experience
+                </a>
+                <a href="education.html" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+  
+            <div class="profile-info">
+                
+                <h1>Muhammad Mikran Sandhu</h1>
+                <p>Website & Logo Designer | Web Developer | Social Media Manager</p>
+                <center>
+                    <!-- From Uiverse.io by CollinsEzeokeke --> 
+                    <div class="svg-frame">
+                        <svg style="--i:0;--j:0;">
+                        <g id="out1">
+                            <path
+                            d="M72 172C72 116.772 116.772 72 172 72C227.228 72 272 116.772 272 172C272 227.228 227.228 272 172 272C116.772 272 72 227.228 72 172ZM197.322 172C197.322 158.015 185.985 146.678 172 146.678C158.015 146.678 146.678 158.015 146.678 172C146.678 185.985 158.015 197.322 172 197.322C185.985 197.322 197.322 185.985 197.322 172Z"
+                            ></path>
+                            <path
+                            mask="url(#path-1-inside-1_111_3212)"
+                            stroke-miterlimit="16"
+                            stroke-width="2"
+                            stroke="#00FFFF"
+                            d="M72 172C72 116.772 116.772 72 172 72C227.228 72 272 116.772 272 172C272 227.228 227.228 272 172 272C116.772 272 72 227.228 72 172ZM197.322 172C197.322 158.015 185.985 146.678 172 146.678C158.015 146.678 146.678 158.015 146.678 172C146.678 185.985 158.015 197.322 172 197.322C185.985 197.322 197.322 185.985 197.322 172Z"
+                            ></path>
+                        </g>
+                        </svg>
+                    
+                        <svg style="--i:1;--j:1;">
+                        <g id="out2">
+                            <mask fill="white" id="path-2-inside-2_111_3212">
+                            <path
+                                d="M102.892 127.966C93.3733 142.905 88.9517 160.527 90.2897 178.19L94.3752 177.88C93.1041 161.1 97.3046 144.36 106.347 130.168L102.892 127.966Z"
+                            ></path>
+                            <path
+                                d="M93.3401 194.968C98.3049 211.971 108.646 226.908 122.814 237.541L125.273 234.264C111.814 224.163 101.99 209.973 97.2731 193.819L93.3401 194.968Z"
+                            ></path>
+                            <path
+                                d="M152.707 92.3592C140.33 95.3575 128.822 101.199 119.097 109.421L121.742 112.55C130.981 104.739 141.914 99.1897 153.672 96.3413L152.707 92.3592Z"
+                            ></path>
+                            <path
+                                d="M253.294 161.699C255.099 175.937 253.132 190.4 247.59 203.639L243.811 202.057C249.075 189.48 250.944 175.74 249.23 162.214L253.294 161.699Z"
+                            ></path>
+                            <path
+                                d="M172 90.0557C184.677 90.0557 197.18 92.9967 208.528 98.6474C219.875 104.298 229.757 112.505 237.396 122.621L234.126 125.09C226.869 115.479 217.481 107.683 206.701 102.315C195.921 96.9469 184.043 94.1529 172 94.1529V90.0557Z"
+                            ></path>
+                            <path
+                                d="M244.195 133.235C246.991 138.442 249.216 143.937 250.83 149.623L246.888 150.742C245.355 145.34 243.242 140.12 240.586 135.174L244.195 133.235Z"
+                            ></path>
+                            <path
+                                d="M234.238 225.304C223.932 237.338 210.358 246.126 195.159 250.604C179.961 255.082 163.79 255.058 148.606 250.534L149.775 246.607C164.201 250.905 179.563 250.928 194.001 246.674C208.44 242.42 221.335 234.071 231.126 222.639L234.238 225.304Z"
+                            ></path>
+                            </mask>
+                            <path
+                            mask="url(#path-2-inside-2_111_3212)"
+                            fill="#00FFFF"
+                            d="M102.892 127.966L105.579 123.75L101.362 121.063L98.6752 125.28L102.892 127.966ZM90.2897 178.19L85.304 178.567L85.6817 183.553L90.6674 183.175L90.2897 178.19ZM94.3752 177.88L94.7529 182.866L99.7386 182.488L99.3609 177.503L94.3752 177.88ZM106.347 130.168L110.564 132.855L113.251 128.638L109.034 125.951L106.347 130.168ZM93.3401 194.968L91.9387 190.168L87.1391 191.569L88.5405 196.369L93.3401 194.968ZM122.814 237.541L119.813 241.54L123.812 244.541L126.813 240.542L122.814 237.541ZM125.273 234.264L129.272 237.265L132.273 233.266L128.274 230.265L125.273 234.264ZM97.2731 193.819L102.073 192.418L100.671 187.618L95.8717 189.02L97.2731 193.819ZM152.707 92.3592L157.567 91.182L156.389 86.3226L151.53 87.4998L152.707 92.3592ZM119.097 109.421L115.869 105.603L112.05 108.831L115.278 112.649L119.097 109.421ZM121.742 112.55L117.924 115.778L121.152 119.596L124.97 116.368L121.742 112.55ZM153.672 96.3413L154.849 101.201L159.708 100.023L158.531 95.1641L153.672 96.3413ZM253.294 161.699L258.255 161.07L257.626 156.11L252.666 156.738L253.294 161.699ZM247.59 203.639L245.66 208.251L250.272 210.182L252.203 205.569L247.59 203.639ZM243.811 202.057L239.198 200.126L237.268 204.739L241.88 206.669L243.811 202.057ZM249.23 162.214L248.601 157.253L243.641 157.882L244.269 162.842L249.23 162.214ZM172 90.0557V85.0557H167V90.0557H172ZM208.528 98.6474L206.299 103.123L206.299 103.123L208.528 98.6474ZM237.396 122.621L240.409 126.611L244.399 123.598L241.386 119.608L237.396 122.621ZM234.126 125.09L230.136 128.103L233.149 132.093L237.139 129.08L234.126 125.09ZM206.701 102.315L204.473 106.791L204.473 106.791L206.701 102.315ZM172 94.1529H167V99.1529H172V94.1529ZM244.195 133.235L248.601 130.87L246.235 126.465L241.83 128.83L244.195 133.235ZM250.83 149.623L252.195 154.433L257.005 153.067L255.64 148.257L250.83 149.623ZM246.888 150.742L242.078 152.107L243.444 156.917L248.254 155.552L246.888 150.742ZM240.586 135.174L238.22 130.768L233.815 133.134L236.181 137.539L240.586 135.174ZM234.238 225.304L238.036 228.556L241.288 224.759L237.491 221.506L234.238 225.304ZM195.159 250.604L196.572 255.4L196.572 255.4L195.159 250.604ZM148.606 250.534L143.814 249.107L142.386 253.899L147.178 255.326L148.606 250.534ZM149.775 246.607L151.203 241.816L146.411 240.388L144.983 245.18L149.775 246.607ZM194.001 246.674L195.415 251.47L195.415 251.47L194.001 246.674ZM231.126 222.639L234.379 218.841L230.581 215.589L227.329 219.386L231.126 222.639ZM98.6752 125.28C88.5757 141.13 83.8844 159.826 85.304 178.567L95.2754 177.812C94.0191 161.227 98.1709 144.681 107.109 130.653L98.6752 125.28ZM90.6674 183.175L94.7529 182.866L93.9976 172.895L89.912 173.204L90.6674 183.175ZM99.3609 177.503C98.1715 161.8 102.102 146.135 110.564 132.855L102.131 127.481C92.5071 142.585 88.0368 160.4 89.3895 178.258L99.3609 177.503ZM109.034 125.951L105.579 123.75L100.205 132.183L103.661 134.385L109.034 125.951ZM88.5405 196.369C93.8083 214.41 104.78 230.259 119.813 241.54L125.815 233.542C112.512 223.558 102.802 209.532 98.1397 193.566L88.5405 196.369ZM126.813 240.542L129.272 237.265L121.274 231.263L118.815 234.54L126.813 240.542ZM128.274 230.265C115.679 220.813 106.486 207.534 102.073 192.418L92.4735 195.221C97.493 212.412 107.948 227.513 122.272 238.263L128.274 230.265ZM95.8717 189.02L91.9387 190.168L94.7415 199.767L98.6745 198.619L95.8717 189.02ZM151.53 87.4998C138.398 90.681 126.188 96.8793 115.869 105.603L122.325 113.239C131.457 105.519 142.262 100.034 153.884 97.2187L151.53 87.4998ZM115.278 112.649L117.924 115.778L125.56 109.322L122.915 106.193L115.278 112.649ZM124.97 116.368C133.616 109.059 143.846 103.866 154.849 101.201L152.495 91.4818C139.981 94.5132 128.347 100.419 118.514 108.732L124.97 116.368ZM158.531 95.1641L157.567 91.182L147.848 93.5364L148.812 97.5185L158.531 95.1641ZM248.334 162.327C250.028 175.697 248.181 189.277 242.978 201.708L252.203 205.569C258.082 191.522 260.169 176.177 258.255 161.07L248.334 162.327ZM249.521 199.027L245.741 197.445L241.88 206.669L245.66 208.251L249.521 199.027ZM248.423 203.987C254.025 190.602 256.014 175.98 254.19 161.585L244.269 162.842C245.873 175.5 244.125 188.357 239.198 200.126L248.423 203.987ZM249.858 167.174L253.923 166.659L252.666 156.738L248.601 157.253L249.858 167.174ZM172 95.0557C183.903 95.0557 195.644 97.8172 206.299 103.123L210.757 94.1717C198.717 88.1761 185.45 85.0557 172 85.0557V95.0557ZM206.299 103.123C216.954 108.429 226.233 116.135 233.406 125.634L241.386 119.608C233.281 108.874 222.796 100.167 210.757 94.1717L206.299 103.123ZM234.383 118.631L231.113 121.1L237.139 129.08L240.409 126.611L234.383 118.631ZM238.116 122.077C230.393 111.849 220.403 103.552 208.93 97.8393L204.473 106.791C214.56 111.814 223.345 119.11 230.136 128.103L238.116 122.077ZM208.93 97.8393C197.458 92.1263 184.816 89.1529 172 89.1529V99.1529C183.269 99.1529 194.385 101.767 204.473 106.791L208.93 97.8393ZM177 94.1529V90.0557H167V94.1529H177ZM239.79 135.601C242.416 140.49 244.504 145.649 246.02 150.988L255.64 148.257C253.927 142.225 251.567 136.395 248.601 130.87L239.79 135.601ZM249.464 144.813L245.523 145.932L248.254 155.552L252.195 154.433L249.464 144.813ZM251.698 149.376C250.067 143.628 247.818 138.073 244.991 132.808L236.181 137.539C238.666 142.168 240.644 147.052 242.078 152.107L251.698 149.376ZM242.951 139.579L246.561 137.64L241.83 128.83L238.22 130.768L242.951 139.579ZM230.441 222.051C220.763 233.351 208.017 241.603 193.746 245.808L196.572 255.4C212.698 250.649 227.101 241.325 238.036 228.556L230.441 222.051ZM193.746 245.808C179.475 250.012 164.291 249.99 150.033 245.742L147.178 255.326C163.289 260.125 180.447 260.151 196.572 255.4L193.746 245.808ZM153.397 251.962L154.567 248.035L144.983 245.18L143.814 249.107L153.397 251.962ZM148.348 251.399C163.7 255.973 180.049 255.997 195.415 251.47L192.588 241.877C179.077 245.858 164.702 245.837 151.203 241.816L148.348 251.399ZM195.415 251.47C210.78 246.942 224.504 238.058 234.924 225.891L227.329 219.386C218.167 230.084 206.099 237.897 192.588 241.877L195.415 251.47ZM227.874 226.436L230.986 229.101L237.491 221.506L234.379 218.841L227.874 226.436Z"
+                            ></path>
+                        </g>
+                        </svg>
+                    
+                        <svg style="--i:0;--j:2;">
+                        <g id="inner3">
+                            <path
+                            d="M195.136 135.689C188.115 131.215 179.948 128.873 171.624 128.946C163.299 129.019 155.174 131.503 148.232 136.099L148.42 136.382C155.307 131.823 163.368 129.358 171.627 129.286C179.886 129.213 187.988 131.537 194.954 135.975L195.136 135.689Z"
+                            ></path>
+                            <path
+                            d="M195.136 208.311C188.115 212.784 179.948 215.127 171.624 215.054C163.299 214.981 155.174 212.496 148.232 207.901L148.42 207.618C155.307 212.177 163.368 214.642 171.627 214.714C179.886 214.786 187.988 212.463 194.954 208.025L195.136 208.311Z"
+                            ></path>
+                            <path
+                            mask="url(#path-5-inside-3_111_3212)"
+                            fill="#00FFFF"
+                            d="M195.136 135.689L195.474 135.904L195.689 135.566L195.351 135.352L195.136 135.689ZM171.624 128.946L171.627 129.346L171.624 128.946ZM148.232 136.099L148.011 135.765L147.678 135.986L147.899 136.32L148.232 136.099ZM148.42 136.382L148.086 136.603L148.307 136.936L148.641 136.716L148.42 136.382ZM171.627 129.286L171.63 129.686L171.627 129.286ZM194.954 135.975L194.739 136.313L195.076 136.528L195.291 136.19L194.954 135.975ZM195.136 208.311L195.351 208.648L195.689 208.433L195.474 208.096L195.136 208.311ZM171.624 215.054L171.627 214.654L171.624 215.054ZM148.232 207.901L147.899 207.68L147.678 208.014L148.011 208.234L148.232 207.901ZM148.42 207.618L148.641 207.284L148.307 207.063L148.086 207.397L148.42 207.618ZM171.627 214.714L171.63 214.314L171.627 214.714ZM194.954 208.025L195.291 207.81L195.076 207.472L194.739 207.687L194.954 208.025ZM195.351 135.352C188.265 130.836 180.022 128.473 171.62 128.546L171.627 129.346C179.874 129.274 187.966 131.594 194.921 136.026L195.351 135.352ZM171.62 128.546C163.218 128.619 155.018 131.127 148.011 135.765L148.453 136.432C155.33 131.88 163.38 129.418 171.627 129.346L171.62 128.546ZM147.899 136.32L148.086 136.603L148.753 136.161L148.566 135.878L147.899 136.32ZM148.641 136.716C155.463 132.199 163.448 129.757 171.63 129.686L171.623 128.886C163.287 128.958 155.15 131.447 148.199 136.049L148.641 136.716ZM171.63 129.686C179.812 129.614 187.839 131.916 194.739 136.313L195.169 135.638C188.138 131.158 179.959 128.813 171.623 128.886L171.63 129.686ZM195.291 136.19L195.474 135.904L194.799 135.474L194.617 135.76L195.291 136.19ZM194.921 207.974C187.966 212.406 179.874 214.726 171.627 214.654L171.62 215.454C180.022 215.527 188.265 213.163 195.351 208.648L194.921 207.974ZM171.627 214.654C163.38 214.582 155.33 212.12 148.453 207.567L148.011 208.234C155.018 212.873 163.218 215.38 171.62 215.454L171.627 214.654ZM148.566 208.122L148.753 207.838L148.086 207.397L147.899 207.68L148.566 208.122ZM148.199 207.951C155.15 212.553 163.287 215.041 171.623 215.114L171.63 214.314C163.448 214.243 155.463 211.801 148.641 207.284L148.199 207.951ZM171.623 215.114C179.959 215.187 188.138 212.842 195.169 208.362L194.739 207.687C187.839 212.084 179.812 214.386 171.63 214.314L171.623 215.114ZM194.617 208.239L194.799 208.526L195.474 208.096L195.291 207.81L194.617 208.239Z"
+                            ></path>
+                        </g>
+                        <path
+                            stroke="#00FFFF"
+                            d="M240.944 172C240.944 187.951 235.414 203.408 225.295 215.738C215.176 228.068 201.095 236.508 185.45 239.62C169.806 242.732 153.567 240.323 139.5 232.804C125.433 225.285 114.408 213.12 108.304 198.384C102.2 183.648 101.394 167.25 106.024 151.987C110.654 136.723 120.434 123.537 133.696 114.675C146.959 105.813 162.884 101.824 178.758 103.388C194.632 104.951 209.472 111.97 220.751 123.249"
+                            id="out3"
+                        ></path>
+                        </svg>
+                    
+                        <svg style="--i:1;--j:3;">
+                        <g id="inner1">
+                            <path
+                            fill="#00FFFF"
+                            d="M145.949 124.51L148.554 129.259C156.575 124.859 165.672 122.804 174.806 123.331C183.94 123.858 192.741 126.944 200.203 132.236C207.665 137.529 213.488 144.815 217.004 153.261C220.521 161.707 221.59 170.972 220.09 179.997L224.108 180.665L224.102 180.699L229.537 181.607C230.521 175.715 230.594 169.708 229.753 163.795L225.628 164.381C224.987 159.867 223.775 155.429 222.005 151.179C218.097 141.795 211.628 133.699 203.337 127.818C195.045 121.937 185.266 118.508 175.118 117.923C165.302 117.357 155.525 119.474 146.83 124.037C146.535 124.192 146.241 124.349 145.949 124.51ZM224.638 164.522C224.009 160.091 222.819 155.735 221.082 151.563C217.246 142.352 210.897 134.406 202.758 128.634C194.62 122.862 185.021 119.496 175.06 118.922C165.432 118.367 155.841 120.441 147.311 124.914L148.954 127.91C156.922 123.745 165.876 121.814 174.864 122.333C184.185 122.87 193.166 126.019 200.782 131.421C208.397 136.822 214.339 144.257 217.928 152.877C221.388 161.188 222.526 170.276 221.23 179.173L224.262 179.677C224.998 174.671 225.35 169.535 224.638 164.522Z"
+                            clip-rule="evenodd"
+                            fill-rule="evenodd"
+                            ></path>
+                            <path
+                            fill="#00FFFF"
+                            d="M139.91 220.713C134.922 217.428 130.469 213.395 126.705 208.758L130.983 205.286L130.985 205.288L134.148 202.721C141.342 211.584 151.417 217.642 162.619 219.839C173.821 222.036 185.438 220.232 195.446 214.742L198.051 219.491C197.759 219.651 197.465 219.809 197.17 219.963C186.252 225.693 173.696 227.531 161.577 225.154C154.613 223.789 148.041 221.08 142.202 217.234L139.91 220.713ZM142.752 216.399C148.483 220.174 154.934 222.833 161.769 224.173C173.658 226.504 185.977 224.704 196.689 219.087L195.046 216.09C185.035 221.323 173.531 222.998 162.427 220.82C151.323 218.643 141.303 212.747 134.01 204.122L131.182 206.5C134.451 210.376 138.515 213.607 142.752 216.399Z"
+                            clip-rule="evenodd"
+                            fill-rule="evenodd"
+                            ></path>
+                        </g>
+                        </svg>
+                    
+                        <svg style="--i:2;--j:4;">
+                        <path
+                            fill="#00FFFF"
+                            d="M180.956 186.056C183.849 184.212 186.103 181.521 187.41 178.349C188.717 175.177 189.013 171.679 188.258 168.332C187.503 164.986 185.734 161.954 183.192 159.65C180.649 157.346 177.458 155.883 174.054 155.46C170.649 155.038 167.197 155.676 164.169 157.288C161.14 158.9 158.683 161.407 157.133 164.468C155.582 167.528 155.014 170.992 155.505 174.388C155.997 177.783 157.524 180.944 159.879 183.439L161.129 182.259C159.018 180.021 157.648 177.186 157.207 174.141C156.766 171.096 157.276 167.989 158.667 165.245C160.057 162.5 162.261 160.252 164.977 158.806C167.693 157.36 170.788 156.788 173.842 157.167C176.895 157.546 179.757 158.858 182.037 160.924C184.317 162.99 185.904 165.709 186.581 168.711C187.258 171.712 186.992 174.849 185.82 177.694C184.648 180.539 182.627 182.952 180.032 184.606L180.956 186.056Z"
+                            id="center1"
+                        ></path>
+                        <path
+                            fill="#00FFFF"
+                            d="M172 166.445C175.068 166.445 177.556 168.932 177.556 172C177.556 175.068 175.068 177.556 172 177.556C168.932 177.556 166.444 175.068 166.444 172C166.444 168.932 168.932 166.445 172 166.445ZM172 177.021C174.773 177.021 177.021 174.773 177.021 172C177.021 169.227 174.773 166.979 172 166.979C169.227 166.979 166.979 169.227 166.979 172C166.979 174.773 169.227 177.021 172 177.021Z"
+                            id="center"
+                        ></path>
+                        </svg>
+                    </div>
+                
+                </center>
+                 
+            </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h2>Professional Summary</h2>
+                <p>Innovative and highly skilled Web Designer, Social Media Manager, and Logo Designer with expertise in front-end web development, digital marketing, and project coordination. Adept at creating visually compelling designs, optimizing brand presence, and implementing digital strategies for enhanced business growth. Passionate about problem-solving, UI/UX design, and emerging technologies.</p>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2>Core Competencies & Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Professional Skills</h3>
+                        <ul>
+                            <li>Web Design & Front-end Development</li>
+                            <li>UI/UX Design & Prototyping</li>
+                            <li>Branding & Logo Creation</li>
+                            <li>Digital Marketing & SEO</li>
+                            <li>Social Media Strategy</li>
+                            <li>Project Management</li>
+                            <li>Client Communication</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>HTML5, CSS3, JavaScript, React.js</li>
+                            <li>Responsive Web Design</li>
+                            <li>WordPress, Shopify, Wix</li>
+                            <li>Adobe Photoshop & Illustrator</li>
+                            <li>Microsoft Office Suite</li>
+                            <li>Web Hosting & Domain Configuration</li>
+                            <li>Email Marketing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                
+                <div class="timeline">
+                    <!-- Current Positions -->
+                    <div class="experience-item active">
+                        <div class="experience-date">April 2025 - Present</div>
+                        <h3>Sales Agent & Website Developer</h3>
+                        <h4>AH Logistics Dispatch & Solution, Gujranwala</h4>
+                        <ul>
+                            <li>Generated leads, built client relationships, presented value propositions, and closed deals for logistics services</li>
+                            <li>Increased client website traffic by an average of 30% through strategic SEO implementation integrated within custom web development solutions and performance optimization techniques</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item active">
+                        <div class="experience-date">October 2024 - Present</div>
+                        <h3>Owner</h3>
+                        <h4>Online Finds Pakistan, Gujranwala</h4>
+                        <ul>
+                            <li>
+                                <a href="https://onlinefindspakistan.wordpress.com/">onlinefindspakistan.com</a>
+                            </li>
+                            <li>Discover a world of quality at OnlineFinds.com! We bring you the best products from around the globe, right to your doorstep</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item active">
+                        <div class="experience-date">October 2024 - Present</div>
+                        <h3>Freelance Website Developer</h3>
+                        <h4>Self-Employed, Gujranwala</h4>
+                        <ul>
+                            <li>Developed and deployed 5+ responsive websites for diverse clients (e.g., e-commerce, portfolio, small business, dispatch company), resulting in an average client satisfaction rating of 4.8/5</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item active">
+                        <div class="experience-date">March 2024 - Present</div>
+                        <h3>Freelance Blogger</h3>
+                        <h4>Leverage Info, Gujranwala</h4>
+                        <ul>
+                            <li>
+                                <a href="https://www.leverage.com.pk/members-area/mmikransandhu/profile">My Blogs</a>
+                            </li>
+                            <li>Spearhead social media management, enhancing brand visibility and engagement</li>
+                            <li>Create unique, high-impact logos for branding and marketing campaigns</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item active">
+                        <div class="experience-date">December 2023 - Present</div>
+                        <h3>Brand Ambassador</h3>
+                        <h4>Leverage, Gujranwala</h4>
+                        <ul>
+                            <li>Spearhead social media management, enhancing brand visibility and engagement</li>
+                            <li>Create unique, high-impact logos for branding and marketing campaigns</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item active">
+                        <div class="experience-date">January 2022 - Present</div>
+                        <h3>Social Media Manager & Website Developer</h3>
+                        <h4>Alpha Academy, Gujranwala</h4>
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/alpha_academy19/">Alpha Academy Instagram</a>
+                            </li>
+                            <li>Spearhead social media management, enhancing brand visibility and engagement</li>
+                            <li>Create unique, high-impact logos for branding and marketing campaigns</li>
+                            <li>Developed and implemented scalable website architectures to accommodate future growth and evolving business requirements</li>
+                        </ul>
+                    </div>
+
+                    <!-- Past Positions -->
+                    <div class="experience-item">
+                        <div class="experience-date">October 2024 - January 2025</div>
+                        <h3>Sales And Marketing Specialist</h3>
+                        <h4>CRAFTSCODE SOLUTION, Islamabad</h4>
+                        <ul>
+                            <li>Provided website solutions that included the development of custom landing pages optimized for email campaign traffic and conversions</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-date">January 2024 - October 2024</div>
+                        <h3>Website Developer</h3>
+                        <h4>APPPILLARS, Gujranwala</h4>
+                        <ul>
+                            <li>Assisted in the development of web applications using JavaScript and React.js</li>
+                            <li>Collaborated with developers and designers to enhance UI/UX functionality</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-date">October 2024</div>
+                        <h3>Market Research Analyst</h3>
+                        <h4>Silverlight Research Expert Network, London</h4>
+                        <ul>
+                            <li>Conducted comprehensive market analysis to identify trends and opportunities in the digital marketing landscape</li>
+                            <li>Utilized data analytics tools to measure campaign performance and optimize marketing efforts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="experience-item">
+                    <h3>University of Central Punjab, Gujranwala</h3>
+                    <p><em>Bachelor's in Computer Science | 2023 - 2027</em></p>
+                </div>
+                <div class="experience-item">
+                    <h3>Punjab Group of Colleges</h3>
+                    <p><em>Higher Secondary Certificate (HSC) in Computer Science | 2021 - 2023</em></p>
+                </div>
+                <div class="experience-item">
+                    <h3>Quaid-I-Azam Divisional Public School</h3>
+                    <p><em>Secondary School Certificate (SSC) | 2011 - 2021</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Certifications</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Microsoft Office Specialist</h3>
+                        <p>February 2023</p>
+                        <ul>
+                            <li>                        
+                            <a href="https://github.com/M-Mikran-Sandhu/certificates/blob/main/Microsoft%20Word%20Office%202019.pdf">Microsoft Word Office 2019.pdf</a>
+                            </li>
+                        </ul>
+                     </div>
+                    <div class="skill-card ">
+                             
+                    </div>
+                    <div class="skill-card">
+                        <h3>HTML5 with Responsive Web Design</h3>
+                        <p>October 2023</p>
+                        <ul>
+                            <li>                        
+                            <a href="https://github.com/M-Mikran-Sandhu/certificates/blob/main/HTML5%20with%20Responsive%20Web%20Design.jpg">Aptech Certificate</a>
+                            </li>
+                        </ul>                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--light-bg);">
+            <div class="container">
+                <h2>Languages</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>English</h3>
+                        <p>Professional Level</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Urdu</h3>
+                        <p>Native</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Punjabi</h3>
+                        <p>Mother Tongue</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <div class="diiiv">
+                        <a href="https://zcal.co/muhammad-mikran">
+                        <div class="bg-sky-700 rounded-2xl shadow-sm shadow-sky-500 outline outline-slate-400 -outline-offset-8">
+                            <div class="group overflow-hidden relative after:duration-500 before:duration-500  duration-500 hover:after:duration-500 hover:after:translate-x-24 hover:before:translate-y-12 hover:before:-translate-x-32 hover:duration-500 after:absolute after:w-24 after:h-24 after:bg-sky-700 after:rounded-full  after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12  before:absolute before:w-20 before:h-20 before:bg-sky-400 before:rounded-full  before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12  hover:rotate-12 flex justify-center items-center h-56 w-80  bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8">
+                              <div class="z-10 flex flex-col items-center gap-2">
+                                <span class="text-slate-400 text-6xl font-bold">MMS </span>
+                                <p class="text-gray-50">Frontend developer</p>
+                              </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Gujranwala, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 321 7112944</p>
+                    <p><i class="fas fa-envelope"></i> sandhumikran@gmail.com</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/m-mikran-sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/M-Mikran-Sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://taplink.cc/mmikransandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fa-brands fa-meetup"></i>
+                        </a>
+                        <a href="mailto:sandhumikran@gmail.com" class="social-link" rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Muhammad Mikran Sandhu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger menu
+            menuToggle.classList.toggle('active');
+        });
+
+        // Active Link Highlighting
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksAll.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu when link is clicked
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="XMu27tiEkhnCS0bXQzKZJ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
+
+    <!-- Add particles.js before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#2ecc71' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2ecc71',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Add scroll reveal functionality
+        const revealElements = document.querySelectorAll('.section, .skill-card, .experience-item');
+        
+        function reveal() {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Add smooth parallax effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollPosition = window.scrollY;
+            header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        // Add typing effect to profile info
+        const profileText = document.querySelector('.profile-info p');
+        const text = profileText.textContent;
+        profileText.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                profileText.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+
+        // Start typing effect when page loads
+        window.addEventListener('load', typeWriter);
+    </script>
+</body>
+</html>

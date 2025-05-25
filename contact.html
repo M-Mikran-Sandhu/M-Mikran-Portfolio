@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Muhammad Mikran Sandhu</title>
+    <!-- icons -->
+    <link rel="icon" href="https://i.pinimg.com/736x/f6/3f/4c/f63f4c2b21694578d39deaae47c73f4c.jpg">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+          /* Updated Root Variables */
+          :root {
+            --primary-color: #000000;
+            --secondary-color: #3498db;
+            --accent-color: #2ecc71;
+            --dark-bg: #000000;
+            --darker-bg: #0a0a0a;
+            --nav-bg: rgba(0, 0, 0, 0.8);
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #bbbbbb;
+            --link-hover: #2ecc71;
+            --gradient: linear-gradient(135deg, #3498db, #2ecc71);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --border-radius-sm: 12px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            --section-padding: 100px;
+            --card-padding: 30px;
+        }
+
+        /* Updated Body Styles */
+        body {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            margin: 0;
+            padding-top: 90px; /* Account for fixed navbar */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Updated Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            color: var(--text-primary);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--card-border);
+            /* Use variable for height consistency */
+            min-height: var(--navbar-height);
+            display: flex; /* Use flex to center container vertically */
+            align-items: center; /* Center nav-container vertically */
+            padding: 0; /* Remove padding here, apply to container */
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            width: 100%; /* Ensure container takes full width */
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Consistent horizontal padding */
+            padding: 17px 20px;
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Removed padding here, handled by alignment */
+            color: var(--text-primary); /* Fallback color */
+            transition: font-size 0.3s ease; /* Smooth transition for responsive */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem; /* Reduced gap slightly */
+            align-items: center;
+            list-style: none; /* Remove default list styles if using ul */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--text-primary) !important;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.7rem 1rem; /* Adjusted padding */
+            border-radius: var(--border-radius-md);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid transparent;
+        }
+
+        .nav-link i {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            transition: color 0.3s ease; /* Smooth icon color transition */
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(46, 204, 113, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            color: var(--accent-color) !important; /* Make text green on hover/active */
+        }
+
+        .nav-link:hover i,
+        .nav-link.active i {
+             color: var(--accent-color); /* Make icon green on hover/active */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; /* Position slightly below */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+            border-radius: 1px; /* Slightly rounded ends */
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 70%; /* Adjusted width */
+        }
+
+        /* Scroll Animation */
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.95); /* Darker on scroll */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            /* Optionally reduce height slightly on scroll */
+            /* min-height: calc(var(--navbar-height) - 10px); */
+        }
+
+        /* --- End Navbar Styles --- */
+
+
+        /* --- Mobile Menu Toggle --- */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-around; /* Even spacing */
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001; /* Above nav links */
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            display: block; /* Ensure spans are block */
+            width: 100%;
+            height: 3px; /* Slightly thicker */
+            background-color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Added easing */
+            border-radius: var(--border-radius-sm);
+            transform-origin: center; /* Rotate around center */
+        }
+
+        /* Mobile Menu Animation */
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg); /* Adjusted transform */
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px); /* Fade out left */
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg); /* Adjusted transform */
+        }
+        /* --- End Mobile Menu Toggle --- */
+
+
+        /* contact section */
+
+        .contact-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h1 {
+            font-size: 2.5em;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: var(--border-radius-md);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(10px);
+            background: rgba(46, 204, 113, 0.05);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: var(--text-primary);
+        }
+
+        .info-content h3 {
+            color: var(--text-primary);
+            margin: 0 0 5px 0;
+        }
+
+        .info-content p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: var(--border-radius-sm);
+            color: var(--text-primary);
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: var(--text-primary);
+            border: none;
+            padding: 15px 30px;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+        }
+        footer {
+            background: var(--darker-bg);
+            border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+            padding: 60px 0 30px;
+            margin-top: 4rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-primary);
+        }
+
+        
+
+        .footer-main {
+            display: grid;
+            justify-content: space-between;
+            /* Adjusted columns for potentially more content */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 30px; /* Space before divider */
+        }
+
+        .footer-logo{
+            margin-left: 40px;
+        }
+
+         
+
+        .footer-contact h4,
+        .footer-social h4 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative; /* For underline */
+            padding-bottom: 8px; /* Space for underline */
+        }
+
+        /* Underline for footer headings */
+        .footer-contact h4::after,
+        .footer-social h4::after {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 0;
+             width: 40px;
+             height: 2px;
+             background: var(--gradient);
+             border-radius: 1px;
+        }
+
+
+        .footer-contact p {
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .footer-contact i {
+            color: var(--accent-color);
+            width: 18px; /* Alignment */
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+         .footer-contact p:hover i {
+            transform: scale(1.2);
+        }
+
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping if many icons */
+            gap: 15px;
+            justify-content: flex-start; /* Default alignment */
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+            text-decoration: none; /* Remove underline from icons */
+        }
+
+        .social-link:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px) scale(1.05); /* Combined effect */
+            border-color: var(--accent-color);
+            background: rgba(46, 204, 113, 0.1); /* Subtle bg on hover */
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: var(--card-border);
+            margin: 30px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted); /* Muted color for copyright */
+            font-size: 0.9rem;
+        }
+
+        /* --- End Footer --- */
+
+
+        /* General Text & Content Styles */
+        .profile-info h1 {
+            font-size: clamp(2.2rem, 5vw, 3rem); /* Responsive font size */
+            margin-bottom: 10px;
+            background: var(--gradient); /* Apply gradient to main heading */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center; /* Center header text */
+        }
+
+        .profile-info p {
+            font-size: clamp(1rem, 2.5vw, 1.2rem); /* Responsive font size */
+            margin-bottom: 20px; /* More space */
+            color: var(--text-secondary);
+            text-align: center; /* Center header text */
+            max-width: 700px; /* Limit width of subtitle */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Headers */
+        h2 {
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 2.5em); /* Responsive font size */
+            margin-bottom: 40px; /* Increased spacing */
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border-bottom: none !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            
+            -webkit-text-fill-color: unset !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px; /* Space for underline */
+            text-align: center; /* Center section headers */
+            display: block; /* Make it block to center */
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%; /* Center the underline */
+            transform: translateX(-50%) scaleX(0.3); /* Center origin */
+            width: 80px; /* Fixed width underline */
+            height: 3px;
+            background: #ffffff;
+            transform-origin: center; /* Scale from center */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 1.5px;
+        }
+
+        h2:hover {
+            color: var(--accent-color);
+            /* transform: translateX(5px); */ /* Removed side shift for centered text */
+            text-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+        }
+
+        h2:hover::after {
+            transform: translateX(-50%) scaleX(1); /* Expand from center */
+            background: var(--accent-color);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            /* Adjusted minmax for slightly larger cards */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.3em; /* Slightly larger skill category title */
+            border-bottom: 1px solid var(--card-border); /* Divider */
+            padding-bottom: 10px;
+        }
+
+        .skill-card ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0; /* Remove default margin */
+        }
+
+        .skill-card li {
+            margin-bottom: 12px; /* Increased spacing */
+            padding-left: 25px; /* More space for icon */
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .skill-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-card li:before {
+            content: "\f138"; /* FontAwesome checkmark or arrow, e.g., f00c or f138 */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.1em; /* Adjust icon size */
+        }
+
+        /* Experience Section Specifics */
+        .experience-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 5px; /* Reduced space */
+            font-size: 1.3em;
+        }
+         .experience-item h4 { /* Styling for company name */
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1em;
+         }
+
+        .experience-item p,
+        .experience-item li {
+            margin: 8px 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.7; /* Improved readability for descriptions */
+        }
+
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px; /* Indent list */
+            list-style-type: disc; /* Use standard bullets */
+        }
+         .experience-item ul li::marker {
+             color: var(--accent-color); /* Style bullet points */
+         }
+
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+             /* Adjust padding for tablets */
+            .section {
+                 padding: calc(var(--section-padding) * 0.8) 0;
+            }
+            header {
+                 padding: calc(var(--section-padding) * 1) 0 calc(var(--section-padding) * 0.8);
+            }
+            .skills-grid {
+                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            /* --- Responsive Navbar --- */
+             :root {
+                 --navbar-height: 70px; /* Slightly shorter navbar on mobile */
+             }
+             body {
+                 padding-top: var(--navbar-height); /* Update body padding */
+             }
+             .navbar {
+                 /* No padding change needed as container handles it */
+                 min-height: var(--navbar-height); /* Apply mobile height */
+             }
+             .nav-container {
+                 /* Consistent padding already set */
+             }
+             .logo-text {
+                 font-size: 1.6rem; /* Slightly smaller logo */
+             }
+
+            .menu-toggle {
+                display: flex; /* Show hamburger */
+            }
+
+            .nav-links {
+                position: fixed;
+                /* Position below navbar */
+                top: var(--navbar-height);
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98); /* Darker, less transparent */
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem 0; /* Vertical padding only */
+                gap: 0; /* Remove gap, use padding/margin on links */
+                display: none; /* Controlled by JS */
+                border-bottom: 1px solid var(--card-border);
+                border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+                /* Smooth slide-down effect */
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: transform 0.4s ease, opacity 0.4s ease;
+                max-height: calc(100vh - var(--navbar-height)); /* Limit height */
+                overflow-y: auto; /* Allow scrolling if needed */
+            }
+
+            .nav-links.active {
+                display: flex;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+                padding: 1rem 1.5rem; /* Generous padding for tapping */
+                border-radius: 0; /* Full width, no rounding needed */
+                border: none; /* Remove border */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Subtle separator */
+            }
+             .nav-links li:last-child .nav-link { /* Remove border from last item */
+                 border-bottom: none;
+             }
+
+            .nav-link:hover,
+            .nav-link.active {
+                 background: rgba(46, 204, 113, 0.15); /* Slightly stronger hover */
+                 border-color: transparent; /* No border change */
+                 transform: none; /* Disable hover transform */
+                 color: var(--accent-color) !important; /* Ensure color change */
+            }
+             .nav-link:hover i,
+             .nav-link.active i {
+                  color: var(--accent-color); /* Ensure icon color change */
+             }
+            .nav-link::after {
+                display: none; /* Hide underline on mobile */
+            }
+        }
+            /* --- End Responsive Navbar --- */
+
+            /* diiiv */
+            .diiiv{
+            width: 320px;
+            height: 300px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Add WhatsApp Button Styles */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: var(--border-radius-lg);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            opacity: 0.95;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+            border-color: var(--accent-color);
+            opacity: 1;
+        }
+
+        .whatsapp-float i {
+            font-size: 24px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .whatsapp-float span {
+            font-weight: 500;
+            font-size: 0.95em;
+            color: var(--text-primary);
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 15px;
+            }
+            
+            .whatsapp-float span {
+                display: none;
+            }
+            
+            .whatsapp-float i {
+                font-size: 28px;
+            }
+        }
+
+        /* Add new animation keyframes */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatIn {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(50px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(46, 204, 113, 0.2); }
+        }
+
+        /* Enhanced section styles */
+        .section {
+            position: relative;
+            overflow: hidden;
+            animation: floatIn 1s ease-out;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s ease;
+        }
+
+        .section:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* Enhanced contact form */
+        .contact-form {
+            animation: scaleIn 0.6s ease-out backwards;
+            transition: all 0.4s ease;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+            animation: slideInLeft 0.6s ease-out backwards;
+        }
+
+        .form-group:nth-child(even) {
+            animation: slideInRight 0.6s ease-out backwards;
+        }
+
+        .form-control {
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.1);
+        }
+
+        /* Contact info cards */
+        .contact-info-card {
+            animation: scaleIn 0.6s ease-out backwards;
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+        }
+
+        .contact-info-card i {
+            transition: transform 0.4s ease;
+        }
+
+        .contact-info-card:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Add scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add particle background effect */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Social links animation */
+        .social-links a {
+            transition: all 0.4s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: var(--accent-color);
+        }
+
+        /* Submit button animation */
+        .submit-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .submit-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Contact Form Responsive Styles */
+        @media (max-width: 1200px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                padding: 0 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                order: 2;
+            }
+
+            .contact-form {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 0 20px;
+                gap: 25px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 0.95rem;
+            }
+
+            .contact-info {
+                padding: 25px;
+            }
+
+            .contact-info p {
+                font-size: 0.95rem;
+            }
+
+            .submit-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-container {
+                padding: 0 15px;
+                gap: 20px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .form-group {
+                margin-bottom: 12px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            .contact-info {
+                padding: 20px;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+
+            .contact-info h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add WhatsApp Button -->
+    <a href="https://wa.me/923494206922" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>For Website</span>
+    </a>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text" >MMS</span>
+            </a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-user"></i> About
+                </a>
+                <a href="skills.html" class="nav-link">
+                    <i class="fas fa-code"></i> Skills
+                </a>
+                <a href="project.html" class="nav-link">
+                    <i class="fa-solid fa-diagram-project"></i> Projects
+                </a>
+                <a href="experience.html" class="nav-link">
+                    <i class="fas fa-briefcase"></i> Experience
+                </a>
+                <a href="education.html" class="nav-link">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </a>
+                <a href="contact.html" class="nav-link active">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Include your existing navbar here -->
+
+    <section class="contact-section">
+        <div class="section-title">
+            <h1>Contact Me</h1>
+            <p>Let's connect and discuss your next project</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+92 321 7112944</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>sandhumikran@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>Gujranwala, Pakistan</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/m-mikran-sandhu" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/M-Mikran-Sandhu" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://taplink.cc/mmikransandhu" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-meetup"></i>
+                    </a>
+                    <a href="https://instagram.com/mmikransandhu" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-form">
+                <iframe src="https://www.chatbase.co/chatbot-iframe/XMu27tiEkhnCS0bXQzKZJ" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Include your existing footer here -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <div class="diiiv">
+                        <a href="https://zcal.co/muhammad-mikran">
+                        <div class="bg-sky-700 rounded-2xl shadow-sm shadow-sky-500 outline outline-slate-400 -outline-offset-8">
+                            <div class="group overflow-hidden relative after:duration-500 before:duration-500  duration-500 hover:after:duration-500 hover:after:translate-x-24 hover:before:translate-y-12 hover:before:-translate-x-32 hover:duration-500 after:absolute after:w-24 after:h-24 after:bg-sky-700 after:rounded-full  after:blur-xl after:bottom-32 after:right-16 after:w-12 after:h-12  before:absolute before:w-20 before:h-20 before:bg-sky-400 before:rounded-full  before:blur-xl before:top-20 before:right-16 before:w-12 before:h-12  hover:rotate-12 flex justify-center items-center h-56 w-80  bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8">
+                              <div class="z-10 flex flex-col items-center gap-2">
+                                <span class="text-slate-400 text-6xl font-bold">MMS </span>
+                                <p class="text-gray-50">Frontend developer</p>
+                              </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Gujranwala, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 321 7112944</p>
+                    <p><i class="fas fa-envelope"></i> sandhumikran@gmail.com</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/m-mikran-sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/M-Mikran-Sandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://taplink.cc/mmikransandhu" target="_blank" class="social-link" rel="noopener noreferrer">
+                            <i class="fa-brands fa-meetup"></i>
+                        </a>
+                        <a href="mailto:sandhumikran@gmail.com" class="social-link" rel="noopener noreferrer">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Muhammad Mikran Sandhu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animate hamburger menu
+            menuToggle.classList.toggle('active');
+        });
+
+        // Active Link Highlighting
+        const navLinksAll = document.querySelectorAll('.nav-link');
+        
+        navLinksAll.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksAll.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                // Close mobile menu when link is clicked
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+     
+    <!-- Add particles.js before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#2ecc71' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2ecc71',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Add scroll reveal functionality
+        const revealElements = document.querySelectorAll('.section, .contact-form, .contact-info-card, .form-group');
+        
+        function reveal() {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Add smooth parallax effect to header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollPosition = window.scrollY;
+            header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        // Form validation and animation
+        const form = document.querySelector('.contact-form');
+        const inputs = form.querySelectorAll('.form-control');
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    input.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
