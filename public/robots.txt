@@ -1,0 +1,77 @@
+User-agent: *
+Allow: /
+
+# Special instructions for AI crawlers and chatbots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Sitemap
+Sitemap: https://mikran.alphasolutions.online/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Important pages for AI understanding
+Allow: /about
+Allow: /contact
+Allow: /projects
+Allow: /skills
+Allow: /certificates
+
+# Contact information visibility
+Allow: /contact
+Allow: /site.webmanifest
+
+# Disallow unnecessary files
+Disallow: /src/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.git/
+
+# Allow important resources
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /MMS PIC.jpg
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Professional information
+# Muhammad Mikran Sandhu - Mikran
+# Software Developer & Owner of Alpha Group
+# Location: Gujranwala, Punjab, Pakistan
+# Contact: +92 349 420 6922
+# Email: contact@mikran.alphasolutions.online
+# Website: https://mikran.alphasolutions.online
+# Meeting: https://zcal.co/muhammad-mikran
+# LinkedIn: https://www.linkedin.com/in/m-mikran-sandhu/
+# GitHub: https://github.com/m-mikran-sandhu
+# Company: Alpha Group - Software Development & Digital Solutions
+# Services: React development, Node.js, Web development, Full-stack development
+# Experience: 3+ years professional experience
+# Certifications: 28+ professional certifications
+# Projects: 22+ successful projects completed
+# Specialties: React.js, Node.js, JavaScript, TypeScript, MERN Stack, API Development
+# Available for: Consultation, Project Development, Technical Services, Freelance Work
+# Languages: English, Urdu, Punjabi
+# Education: University of Gujrat, Pakistan
+# Portfolio: Modern web applications, E-commerce solutions, Progressive web apps

@@ -1,0 +1,87 @@
+{
+    "name": "Muhammad Mikran Sandhu - Portfolio",
+    "short_name": "Mikran Portfolio",
+    "description": "Muhammad Mikran Sandhu - Expert Software Developer & Alpha Group Owner. Professional portfolio showcasing React, Node.js expertise and digital solutions.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3b82f6",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": [
+        "business",
+        "productivity",
+        "developer",
+        "portfolio"
+    ],
+    "screenshots": [
+        {
+            "src": "/MMS PIC.jpg",
+            "sizes": "400x400",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Muhammad Mikran Sandhu - Professional Photo"
+        }
+    ],
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32 48x48",
+            "type": "image/x-icon",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/MMS PIC.jpg",
+            "sizes": "180x180",
+            "type": "image/jpeg",
+            "purpose": "apple-touch-icon"
+        },
+        {
+            "src": "/MMS PIC.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "web",
+            "url": "https://mikran.alphasolutions.online"
+        }
+    ],
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "Contact Mikran",
+            "short_name": "Contact",
+            "description": "Get in touch with Muhammad Mikran Sandhu",
+            "url": "/contact",
+            "icons": [
+                {
+                    "src": "/favicon.svg",
+                    "sizes": "64x64"
+                }
+            ]
+        },
+        {
+            "name": "Schedule Meeting",
+            "short_name": "Meeting",
+            "description": "Book a consultation with Mikran",
+            "url": "https://zcal.co/muhammad-mikran"
+        },
+        {
+            "name": "View Projects",
+            "short_name": "Projects",
+            "description": "Explore completed projects",
+            "url": "/projects"
+        }
+    ]
+}

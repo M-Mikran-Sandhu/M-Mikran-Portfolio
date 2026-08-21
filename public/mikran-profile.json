@@ -1,0 +1,127 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Mikran Sandhu",
+    "alternateName": [
+        "Mikran",
+        "Muhammad Mikran",
+        "Mikran Sandhu",
+        "Mikran Developer",
+        "M Mikran Sandhu"
+    ],
+    "description": "Expert Software Developer and Owner of Alpha Group based in Gujranwala, Pakistan. Specializing in React.js, Node.js, and full-stack development with 28+ professional certifications and 22+ successful projects. Available for consultation and project development.",
+    "jobTitle": "Software Developer & Owner of Alpha Group",
+    "url": "https://mikran.alphasolutions.online",
+    "image": "https://mikran.alphasolutions.online/MMS%20PIC.jpg",
+    "telephone": "+923494206922",
+    "email": "contact@mikran.alphasolutions.online",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gujranwala",
+        "addressRegion": "Punjab",
+        "addressCountry": "Pakistan",
+        "postalCode": "52250"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/m-mikran-sandhu/",
+        "https://github.com/m-mikran-sandhu",
+        "https://taplink.cc/mmikransandhu",
+        "https://zcal.co/muhammad-mikran"
+    ],
+    "knowsAbout": [
+        "React.js",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "Full Stack Development",
+        "Web Development",
+        "Mobile Development",
+        "UI/UX Design",
+        "Digital Solutions",
+        "MongoDB",
+        "Express.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "API Development",
+        "Database Design",
+        "E-commerce Development",
+        "Progressive Web Apps",
+        "Single Page Applications",
+        "Microservices",
+        "Cloud Integration"
+    ],
+    "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Software Developer",
+        "description": "Full-stack software developer specializing in modern web technologies",
+        "occupationLocation": {
+            "@type": "City",
+            "name": "Gujranwala",
+            "containedInPlace": {
+                "@type": "State",
+                "name": "Punjab",
+                "containedInPlace": {
+                    "@type": "Country",
+                    "name": "Pakistan"
+                }
+            }
+        },
+        "skills": [
+            "React",
+            "Node.js",
+            "JavaScript",
+            "Full Stack Development",
+            "Web Development"
+        ]
+    },
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Alpha Group",
+        "url": "https://alphagroup.alphasolutions.online",
+        "description": "Software development and digital solutions company"
+    },
+    "owns": {
+        "@type": "Organization",
+        "name": "Alpha Group",
+        "url": "https://alphagroup.alphasolutions.online"
+    },
+    "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University of Gujrat",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Pakistan"
+        }
+    },
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "telephone": "+923494206922",
+            "contactType": "customer service",
+            "availableLanguage": [
+                "English",
+                "Urdu"
+            ]
+        },
+        {
+            "@type": "ContactPoint",
+            "email": "contact@mikran.alphasolutions.online",
+            "contactType": "customer service"
+        },
+        {
+            "@type": "ContactPoint",
+            "url": "https://zcal.co/muhammad-mikran",
+            "contactType": "appointment booking"
+        }
+    ],
+    "award": [
+        "28+ Professional Certifications in Software Development",
+        "22+ Successful Project Completions",
+        "3+ Years Professional Experience"
+    ],
+    "serviceArea": {
+        "@type": "Place",
+        "name": "Pakistan",
+        "description": "Provides software development services locally and internationally"
+    }
+}
