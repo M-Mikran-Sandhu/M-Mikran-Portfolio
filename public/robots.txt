@@ -18,7 +18,7 @@ User-agent: Claude-Web
 Allow: /
 
 # Sitemap
-Sitemap: https://mikran.alphasolutions.software/sitemap.xml
+Sitemap: https://m-mikran-portfolio.vercel.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
@@ -61,7 +61,7 @@ Allow: /sitemap.xml
 # Expected graduation: August 2027
 # Location: Gujranwala, Punjab, Pakistan
 # Email: mikran.student@gmail.com
-# Website: https://mikran.alphasolutions.software
+# Website: https://m-mikran-portfolio.vercel.app
 # LinkedIn: https://www.linkedin.com/in/m-mikran-sandhu/
 # GitHub: https://github.com/M-Mikran-Sandhu
 # Open to: internships, research, graduate study, and jobs from 2027
