@@ -19,13 +19,13 @@ const Education = () => {
   const education = [
     {
       id: 1,
-      degree: 'Bachelor\'s in Computer Science',
-      institution: 'University of Central Punjab',
+      degree: 'Bachelor of Science in Computer Science',
+      institution: 'University of Central Punjab, Gujranwala Campus',
       location: 'Gujranwala, Pakistan',
-      period: '2023 - 2027',
+      period: '2023 to August 2027',
       status: 'In Progress',
       current: true,
-      description: 'Pursuing a comprehensive Computer Science degree with focus on software development, web technologies, and digital innovation.',
+      description: 'Seventh-semester BSc Computer Science student, expected to graduate in August 2027. Coursework covers software development, systems, and web technologies, with a growing interest in AI and reliable software.',
       coursework: [
         'Data Structures and Algorithms',
         'Web Development Technologies',
@@ -38,7 +38,7 @@ const Education = () => {
       ],
       skills: ['Programming', 'Web Development', 'Database Design', 'Software Engineering'],
       color: 'from-blue-500 to-cyan-500',
-      gpa: '3.7/4.0'
+      gpa: '3.1/4.0'
     },
     {
       id: 2,
@@ -113,12 +113,10 @@ const Education = () => {
   ]
 
   const academicAchievements = [
-    'Dean\'s List for Academic Excellence (2023-2024)',
-    'Best Web Development Project Award (University Competition)',
-    'Active Member of Computer Science Society',
-    'Participated in Multiple Hackathons and Coding Competitions',
-    'Volunteer Teaching Assistant for Junior Students',
-    'Leadership Role in University Tech Club'
+    'Seventh-semester BSc Computer Science student at UCP Gujranwala Campus',
+    'Expected graduation in August 2027',
+    'Coursework in data structures, operating systems, software engineering, and web development',
+    'Independent projects in image forensics, real-time scheduling, and client websites'
   ]
 
   return (
@@ -136,8 +134,7 @@ const Education = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Education & Learning</h1>
           </div>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-            My educational journey and continuous learning path that has provided the foundation
-            for my technical expertise and professional development in computer science and web technologies.
+            My studies at the University of Central Punjab, Gujranwala Campus, and the skills I am building toward internships, research, and graduate study.
           </p>
         </motion.div>
 
@@ -303,7 +300,7 @@ const Education = () => {
               </div>
             </motion.div>
 
-            {/* Academic Achievements */}
+            {/* Academic Focus */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -313,7 +310,7 @@ const Education = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-primary" />
-                    Academic Achievements
+                    Academic Focus
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -350,18 +347,18 @@ const Education = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">5 Semester</div>
+                    <div className="text-2xl font-bold text-primary">7th Semester</div>
                     <p className="text-sm text-muted-foreground">Computer Science Student</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
                       <span>Degree Progress</span>
-                      <span>60%</span>
+                      <span>75%</span>
                     </div>
-                    <Progress value={60} className="h-2" />
+                    <Progress value={75} className="h-2" />
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-primary">3.14/4.0</div>
+                    <div className="text-lg font-bold text-primary">3.1/4.0</div>
                     <p className="text-sm text-muted-foreground">Current CGPA</p>
                   </div>
                 </CardContent>
@@ -444,21 +441,21 @@ const Education = () => {
             >
               <Card className="bg-gradient-to-br from-primary/10 to-blue-600/10">
                 <CardHeader>
-                  <CardTitle className="text-lg">Learning Goals 2025</CardTitle>
+                  <CardTitle className="text-lg">Learning Goals</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
                     <Badge variant="outline" className="w-full justify-center py-2">
-                      AWS Cloud Certification
+                      Practical machine learning
                     </Badge>
                     <Badge variant="outline" className="w-full justify-center py-2">
-                      Advanced React & Next.js
+                      Reliable AI software
                     </Badge>
                     <Badge variant="outline" className="w-full justify-center py-2">
-                      Machine Learning Basics
+                      Systems software
                     </Badge>
                     <Badge variant="outline" className="w-full justify-center py-2">
-                      DevOps Fundamentals
+                      Research and technical writing
                     </Badge>
                   </div>
                   <p className="text-xs text-muted-foreground mt-4 text-center">

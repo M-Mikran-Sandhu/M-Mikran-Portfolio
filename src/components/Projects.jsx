@@ -23,6 +23,81 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 101,
+      title: 'Image Tampering Detection',
+      description: 'Flask and React app that flags likely photo edits using Error Level Analysis, EXIF metadata, JPEG ghost checks, and statistical image analysis.',
+      category: 'Computer Science',
+      technologies: ['Python', 'Flask', 'React', 'Pillow', 'NumPy'],
+      image: '/api/placeholder/600/400',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/image-tampering-detection',
+      featured: true,
+      date: '2026-02-16',
+      status: 'Completed',
+      client: 'Personal / Coursework',
+      results: ['Multi-method image forensics in a Flask API', 'React front end for uploading images and viewing an ELA heatmap', 'Input checks for file type, size, and corrupt images']
+    },
+    {
+      id: 102,
+      title: 'Real-Time Process Scheduler',
+      description: 'Python CLI and Tkinter app that simulates Earliest Deadline First and Rate Monotonic scheduling, with unit tests for preemption.',
+      category: 'Computer Science',
+      technologies: ['Python', 'Tkinter', 'EDF', 'Rate Monotonic'],
+      image: '/api/placeholder/600/400',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/Real-Time-Process-Scheduler-OS',
+      featured: true,
+      date: '2026-01-29',
+      status: 'Completed',
+      client: 'Coursework',
+      results: ['Implements EDF and Rate Monotonic scheduling', 'CLI and desktop GUI with a Gantt-style timeline', 'Unit tests for preemption behavior']
+    },
+    {
+      id: 103,
+      title: 'Alpha Folder Locker',
+      description: 'Python CLI and Tkinter tool that locks folders with OS permissions and SHA-256 hashed passwords. It controls access; it does not encrypt files.',
+      category: 'Computer Science',
+      technologies: ['Python', 'Tkinter', 'SHA-256'],
+      image: '/api/placeholder/600/400',
+      liveUrl: '#',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/Alpha-Folder-Locker',
+      featured: true,
+      date: '2026-02-10',
+      status: 'Completed',
+      client: 'Personal',
+      results: ['Shared core used by both the CLI and the GUI', 'Passwords stored as SHA-256 hashes', 'Clear documentation that this is access control, not encryption']
+    },
+    {
+      id: 104,
+      title: 'Data Structures and Algorithms',
+      description: 'C++ and Python implementations of trees, AVL trees, heaps, queues, and linked lists, with a generated page for browsing the code.',
+      category: 'Computer Science',
+      technologies: ['C++', 'Python', 'HTML'],
+      image: '/api/placeholder/600/400',
+      liveUrl: 'https://data-structure-and-algorithm-alpha.netlify.app/',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/DATA-Structure-ALG',
+      featured: true,
+      date: '2025-08-12',
+      status: 'Completed',
+      client: 'Coursework',
+      results: ['Implementations of common data structures', 'Browsable HTML index generated from the source files']
+    },
+    {
+      id: 105,
+      title: 'Personal Portfolio',
+      description: 'Personal site built with React, Vite, and Tailwind CSS, covering projects, client work, education, and certificates.',
+      category: 'Web Development',
+      technologies: ['React', 'Vite', 'Tailwind CSS'],
+      image: '/MMS PIC.jpg',
+      liveUrl: 'https://mikran.alphasolutions.software',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/M-Mikran-Portfolio',
+      featured: true,
+      date: '2025-05-18',
+      status: 'In Progress',
+      client: 'Personal',
+      results: ['Live at mikran.alphasolutions.software', 'Built with React, Vite, and Tailwind CSS']
+    },
+    {
       id: 1,
       title: 'Alpha Solutions Website',
       description: 'Complete digital solutions company website with modern design, responsive layout, and comprehensive service showcase.',
@@ -35,7 +110,7 @@ const Projects = () => {
       date: '2024-12-01',
       status: 'Completed',
       client: 'Alpha Solutions',
-      results: ['Increased client inquiries by 150%', 'Improved user engagement by 80%', '98% client satisfaction rating']
+      results: ['Company website with a services showcase', 'Responsive layout for desktop and mobile']
     },
     // {
     //   id: 2,
@@ -55,13 +130,13 @@ const Projects = () => {
     {
       id: 3,
       title: 'AH Logistics Website',
-      description: 'Professional logistics dispatch website with comprehensive service offerings, real-time tracking capabilities, and client management features for efficient freight operations.',
+      description: 'Client website for a logistics company, presenting services and contact information in a responsive layout.',
       category: 'Web Development',
-      technologies: ['React', 'Express.js', 'MySQL', 'Responsive Design'],
+      technologies: ['HTML', 'CSS', 'JavaScript'],
       image: '/ah logictics logo.png',
       liveUrl: 'https://ahlogdispatch.com/',
       githubUrl: '#',
-      featured: true,
+      featured: false,
       date: '2024-08-20',
       status: 'Completed',
       client: 'AH Logistics',
@@ -70,13 +145,13 @@ const Projects = () => {
     {
       id: 4,
       title: 'Alpha Academy Website',
-      description: 'Educational institution website with comprehensive course listings, student portal, and interactive learning features for enhanced educational experience.',
+      description: 'Multi-page education website with course, team, and contact pages, built with HTML, CSS, JavaScript, and Tailwind CSS.',
       category: 'Education',
-      technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript'],
+      technologies: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'],
       image: '/SGN_09_24_2024_1727197614713.png',
       liveUrl: 'https://alphaacademy.alphasolutions.online/',
-      githubUrl: '#',
-      featured: true,
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/Alpha-Academy',
+      featured: false,
       date: '2024-06-10',
       status: 'Completed',
       client: 'Alpha Academy',
@@ -189,17 +264,17 @@ const Projects = () => {
     },
     {
       id: 12,
-      title: 'Alpha Store E-commerce',
-      description: 'Upcoming e-commerce platform for Alpha Store featuring modern shopping experience, product catalog, and comprehensive online retail solutions.',
+      title: 'Alpha Store',
+      description: 'React and Tailwind store front end with a product catalog, cart, and dark mode. Front end only; there is no checkout backend.',
       category: 'E-commerce',
-      technologies: ['React', 'Node.js', 'E-commerce Platform', 'Payment Integration'],
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'Context API'],
       image: '/Alpha Store Logo jpg.png',
-      liveUrl: 'https://alphastore.alphasolutions.online/',
-      githubUrl: '#',
+      liveUrl: 'https://the-alpha-store.netlify.app/',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/E-Commerce',
       featured: true,
-      date: '2024-11-01',
-      status: 'Coming Soon',
-      client: 'Alpha Store',
+      date: '2026-02-15',
+      status: 'Completed',
+      client: 'Personal',
       results: ['Modern e-commerce design', 'Scalable architecture', 'Mobile-first approach', 'Payment gateway integration']
     },
     {
@@ -220,12 +295,12 @@ const Projects = () => {
     {
       id: 14,
       title: 'Dr. Abdul Malik Portfolio',
-      description: 'Professional medical portfolio website with modern design, service showcase, and patient information sections.',
+      description: 'Responsive website for a veterinary doctor client, with services and contact information.',
       category: 'Web Development',
       technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
       image: '/Logo for  Abdul Malik.png',
       liveUrl: 'http://drabdulmalik.alphasolutions.online',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/Dr-Abdul-Malik',
       featured: false,
       date: '2024-07-15',
       status: 'Completed',
@@ -235,12 +310,12 @@ const Projects = () => {
     {
       id: 15,
       title: 'Waqar Professional Portfolio',
-      description: 'Personal branding website with professional showcase, skills presentation, and contact integration.',
+      description: 'Responsive personal website for a client, including a PDF resume export.',
       category: 'Web Development',
       technologies: ['React', 'CSS3', 'JavaScript', 'Professional Design'],
       image: '/api/placeholder/600/400',
-      liveUrl: 'https://waqar.alphasoultions.online',
-      githubUrl: '#',
+      liveUrl: 'https://waqar-ramzan.vercel.app',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/Waqar-Ramzan',
       featured: false,
       date: '2024-06-20',
       status: 'Completed',
@@ -250,12 +325,12 @@ const Projects = () => {
     {
       id: 16,
       title: 'Dr. Kashaf Medical Portfolio',
-      description: 'Specialized medical professional website with practice information, expertise areas, and patient resources.',
+      description: 'Responsive website for a medical doctor client, with practice information and contact details.',
       category: 'Web Development',
       technologies: ['HTML5', 'CSS3', 'Bootstrap', 'Medical Design'],
       image: '/kashaf logo.png',
       liveUrl: 'http://drkashaf.alphasolutions.online',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/M-Mikran-Sandhu/DrKashaf',
       featured: false,
       date: '2024-05-10',
       status: 'Completed',
@@ -359,6 +434,7 @@ const Projects = () => {
     { value: 'Web Development', label: 'Web Development', count: projects.filter(p => p.category === 'Web Development').length },
     { value: 'E-commerce', label: 'E-commerce', count: projects.filter(p => p.category === 'E-commerce').length },
     { value: 'Web Application', label: 'Web Apps', count: projects.filter(p => p.category === 'Web Application').length },
+    { value: 'Computer Science', label: 'Computer Science', count: projects.filter(p => p.category === 'Computer Science').length },
     { value: 'Education', label: 'Education', count: projects.filter(p => p.category === 'Education').length },
     { value: 'Template', label: 'Templates', count: projects.filter(p => p.category === 'Template').length }
   ]
@@ -395,8 +471,7 @@ const Projects = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Projects Portfolio</h1>
           </div>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-            A showcase of my recent work including web development projects, e-commerce solutions,
-            and digital applications that demonstrate my technical expertise and creative problem-solving skills.
+            Selected coursework, software projects, and client websites. I am building toward internships, research, graduate study, and jobs from 2027.
           </p>
         </motion.div>
 

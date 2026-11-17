@@ -35,11 +35,10 @@ import { Card, CardContent } from '@/components/ui/card.jsx'
 const Home = () => {
   const [typedText, setTypedText] = useState('')
   const roles = [
+    'Computer Science Student',
+    'Software Developer',
     'Web Developer',
-    'UI/UX Designer',
-    'Social Media Manager',
-    'Logo Designer',
-    'Full Stack Developer'
+    'Freelance Developer'
   ]
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
 
@@ -62,10 +61,10 @@ const Home = () => {
   }, [currentRoleIndex])
 
   const stats = [
-    { icon: Briefcase, label: 'Years Experience', value: '3+' },
-    { icon: Code, label: 'Projects Completed', value: '22+' },
-    { icon: Users, label: 'Happy Clients', value: '25+' },
-    { icon: Award, label: 'Certifications', value: '28+' },
+    { icon: Code, label: 'Program', value: 'BSc CS' },
+    { icon: Award, label: 'Current Status', value: '7th Semester' },
+    { icon: Briefcase, label: 'Graduation', value: 'Aug 2027' },
+    { icon: Users, label: 'Based In', value: 'Gujranwala' },
   ]
 
   const services = [
@@ -125,7 +124,7 @@ const Home = () => {
                   transition={{ delay: 0.35 }}
                   className="text-base sm:text-lg text-muted-foreground mb-2"
                 >
-                  Software Developer & Owner of Alpha Group
+                  BSc Computer Science student at UCP, Gujranwala Campus
                 </motion.p>
                 <div className="text-lg sm:text-xl lg:text-2xl text-muted-foreground h-6 sm:h-8">
                   <span className="text-foreground font-medium">{typedText}</span>
@@ -144,9 +143,10 @@ const Home = () => {
                 transition={{ delay: 0.5 }}
                 className="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl"
               >
-                Passionate Software Developer & Owner of Alpha Group with expertise in modern web technologies,
-                full-stack development, and comprehensive digital solutions. Specialized in React, Node.js,
-                and creating innovative applications that drive business growth.
+                I am a Computer Science and AI student at the University of Central Punjab, Gujranwala Campus,
+                and I expect to graduate in August 2027. I build websites for clients and coursework, and I am
+                interested in practical AI, reliable software, and systems. I am open to internships, research
+                opportunities, graduate study, and jobs from 2027.
               </motion.p>
 
               <motion.div
@@ -669,10 +669,10 @@ const Home = () => {
             viewport={{ once: true }}
             className="space-y-4 sm:space-y-6"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold px-4">Ready to Start Your Project?</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold px-4">Open to opportunities from 2027</h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Let's work together to bring your ideas to life. I'm always excited to take on new challenges
-              and create something amazing.
+              I am looking for internships, research opportunities, graduate study, and software roles
+              from 2027, in any country. If you have something that might be a fit, I would be glad to talk.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Button
