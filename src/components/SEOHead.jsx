@@ -4,10 +4,10 @@ const SEOHead = ({
     title = "Muhammad Mikran Sandhu | Computer Science and AI Student",
     description = "BSc Computer Science student at the University of Central Punjab, Gujranwala Campus, graduating August 2027. Open to internships, research, graduate study, and jobs from 2027.",
     keywords = "Muhammad Mikran Sandhu, Computer Science student, AI, University of Central Punjab, Gujranwala, web developer, internships, graduate study, React, Python, Flask",
-    canonical = "https://mikran.alphasolutions.software",
-    image = "https://mikran.alphasolutions.software/MMS%20PIC.jpg"
+    canonical = "https://m-mikran-portfolio.vercel.app",
+    image = "https://m-mikran-portfolio.vercel.app/MMS%20PIC.jpg"
 }) => {
-    const siteUrl = "https://mikran.alphasolutions.software"
+    const siteUrl = "https://m-mikran-portfolio.vercel.app"
 
     return (
         <Helmet>
