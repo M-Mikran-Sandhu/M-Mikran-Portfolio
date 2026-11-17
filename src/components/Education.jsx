@@ -3,16 +3,12 @@ import {
   GraduationCap,
   Calendar,
   MapPin,
-  Award,
   BookOpen,
   Star,
-  ExternalLink,
-  Users,
   TrendingUp
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
-import { Button } from '@/components/ui/button.jsx'
 import { Progress } from '@/components/ui/progress.jsx'
 
 const Education = () => {
@@ -34,7 +30,6 @@ const Education = () => {
         'Computer Networks',
         'Object-Oriented Programming',
         'Mobile Application Development',
-        'Digital Marketing Fundamentals'
       ],
       skills: ['Programming', 'Web Development', 'Database Design', 'Software Engineering'],
       color: 'from-blue-500 to-cyan-500',
@@ -85,32 +80,6 @@ const Education = () => {
     }
   ]
 
-  const certifications = [
-    {
-      title: 'Microsoft Office Specialist',
-      issuer: 'Microsoft',
-      date: 'February 2023',
-      description: 'Certified in Microsoft Word 2019, demonstrating proficiency in document processing and office productivity.',
-      skills: ['Microsoft Word', 'Document Processing', 'Office Productivity'],
-      verified: true
-    },
-    {
-      title: 'HTML5 with Responsive Web Design',
-      issuer: 'Aptech Computer Education',
-      date: 'October 2023',
-      description: 'Comprehensive certification covering HTML5, CSS3, and responsive web design principles.',
-      skills: ['HTML5', 'CSS3', 'Responsive Design', 'Web Development'],
-      verified: true
-    }
-  ]
-
-  const onlineCourses = [
-    { title: 'React.js Complete Course', platform: 'Udemy', status: 'Completed' },
-    { title: 'JavaScript ES6+ Masterclass', platform: 'Coursera', status: 'Completed' },
-    { title: 'Digital Marketing Fundamentals', platform: 'Google Digital Garage', status: 'Completed' },
-    { title: 'Node.js Backend Development', platform: 'freeCodeCamp', status: 'In Progress' },
-    { title: 'UI/UX Design Principles', platform: 'Figma Academy', status: 'Completed' }
-  ]
 
   const academicAchievements = [
     'Seventh-semester BSc Computer Science student at UCP Gujranwala Campus',
@@ -246,60 +215,6 @@ const Education = () => {
               </div>
             </motion.div>
 
-            {/* Professional Certifications */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Award className="w-6 h-6 text-primary" />
-                Professional Certifications
-              </h2>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {certifications.map((cert, index) => (
-                  <motion.div
-                    key={cert.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                  >
-                    <Card className="h-full hover:shadow-lg transition-shadow">
-                      <CardHeader className="pb-3">
-                        <div className="flex items-start justify-between">
-                          <div>
-                            <CardTitle className="text-lg mb-1">{cert.title}</CardTitle>
-                            <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                          </div>
-                          {cert.verified && (
-                            <Badge className="bg-green-500 text-white">
-                              <Award className="w-3 h-3 mr-1" />
-                              Verified
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4" />
-                          <span>{cert.date}</span>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground mb-3">{cert.description}</p>
-                        <div className="flex flex-wrap gap-1">
-                          {cert.skills.map((skill) => (
-                            <Badge key={skill} variant="outline" className="text-xs">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
             {/* Academic Focus */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -360,74 +275,6 @@ const Education = () => {
                   <div className="text-center">
                     <div className="text-lg font-bold text-primary">3.1/4.0</div>
                     <p className="text-sm text-muted-foreground">Current CGPA</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Online Learning */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Continuous Learning</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {onlineCourses.map((course, index) => (
-                      <motion.div
-                        key={course.title}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                        className="flex items-center justify-between p-3 rounded-lg bg-secondary/20"
-                      >
-                        <div>
-                          <p className="font-medium text-sm">{course.title}</p>
-                          <p className="text-xs text-muted-foreground">{course.platform}</p>
-                        </div>
-                        <Badge
-                          variant={course.status === 'Completed' ? 'default' : 'outline'}
-                          className="text-xs"
-                        >
-                          {course.status}
-                        </Badge>
-                      </motion.div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Education Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Education Summary</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">12+</div>
-                    <p className="text-sm text-muted-foreground">Years of Education</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">2</div>
-                    <p className="text-sm text-muted-foreground">Professional Certifications</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">5+</div>
-                    <p className="text-sm text-muted-foreground">Online Courses</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">A+</div>
-                    <p className="text-sm text-muted-foreground">Academic Performance</p>
                   </div>
                 </CardContent>
               </Card>

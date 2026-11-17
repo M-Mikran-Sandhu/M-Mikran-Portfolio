@@ -1,7 +1,7 @@
 {
     "name": "Muhammad Mikran Sandhu - Portfolio",
     "short_name": "Mikran Portfolio",
-    "description": "Muhammad Mikran Sandhu - Expert Software Developer & Alpha Group Owner. Professional portfolio showcasing React, Node.js expertise and digital solutions.",
+    "description": "Portfolio of Muhammad Mikran Sandhu, BSc Computer Science student at UCP Gujranwala, graduating August 2027.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -70,12 +70,6 @@
                     "sizes": "64x64"
                 }
             ]
-        },
-        {
-            "name": "Schedule Meeting",
-            "short_name": "Meeting",
-            "description": "Book a consultation with Mikran",
-            "url": "https://zcal.co/muhammad-mikran"
         },
         {
             "name": "View Projects",

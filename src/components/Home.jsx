@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
-  Download,
   ExternalLink,
   Code,
   Palette,
@@ -69,22 +68,22 @@ const Home = () => {
 
   const services = [
     {
-      icon: Globe,
-      title: 'Web Development',
-      description: 'Responsive websites and web applications using modern technologies',
+      icon: Code,
+      title: 'Practical machine learning',
+      description: 'Interested in applied machine learning and how models are used in real software',
       color: 'from-blue-500 to-cyan-500'
     },
     {
-      icon: Palette,
-      title: 'UI/UX Design',
-      description: 'User-centered design solutions that enhance user experience',
-      color: 'from-purple-500 to-pink-500'
+      icon: Shield,
+      title: 'Reliable AI software',
+      description: 'Interested in making software that uses AI safer, more testable, and more reliable',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      icon: Code,
-      title: 'Full Stack Development',
-      description: 'End-to-end development from frontend to backend solutions',
-      color: 'from-green-500 to-emerald-500'
+      icon: Cpu,
+      title: 'Systems and web development',
+      description: 'Coursework and projects in systems software, image analysis, and full-stack web work',
+      color: 'from-purple-500 to-pink-500'
     }
   ]
 
@@ -165,12 +164,7 @@ const Home = () => {
                     <ExternalLink className="ml-2 w-4 h-4" />
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-                  <a href="/Resumeofmikran.pdf" download="Muhammad_Mikran_Sandhu_Resume.pdf">
-                    Download CV
-                    <Download className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
+
               </motion.div>
             </motion.div>
 
@@ -628,7 +622,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">What I Do</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">Interests</h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               I provide end-to-end digital solutions that help businesses thrive in the digital world
             </p>

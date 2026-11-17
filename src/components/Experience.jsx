@@ -3,11 +3,7 @@ import {
   Briefcase,
   Calendar,
   MapPin,
-  ExternalLink,
-  Building,
-  TrendingUp,
-  Users,
-  Award
+  Users
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -20,171 +16,23 @@ const Experience = () => {
       title: 'Freelance Web Developer',
       company: 'Alpha Solutions',
       location: 'Gujranwala, Pakistan',
-      period: '2025 to Present',
+      period: 'October 2024 to Present',
       type: 'Freelance',
       current: true,
       description: 'Independent web development work under Alpha Solutions, building and deploying websites for local professionals and small businesses.',
       achievements: [
         'Designed and developed responsive websites using React, HTML, CSS, JavaScript, and Tailwind CSS',
-        'Deployed client sites on platforms such as Vercel and Netlify',
+        'Built and deployed client sites for local professionals, including doctors and a university professor',
+        'Hosted finished sites on Vercel and Netlify',
         'Built utility and coursework apps, including a GPA calculator and a store front end'
       ],
-      skills: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Client Work'],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      id: 3,
-      title: 'Owner',
-      company: 'Alpha Store',
-      location: 'Gujranwala, Pakistan',
-      period: 'October 2024 - Present',
-      type: 'Business',
-      current: true,
-      description: 'E-commerce business focused on bringing quality products from around the globe to customers in Pakistan.',
-      achievements: [
-        'Successfully launched and managed e-commerce platform',
-        'Curated product selection from global suppliers',
-        'Implemented efficient order fulfillment and customer service processes',
-        'Built strong customer base through quality products and excellent service'
-      ],
-      skills: ['E-commerce', 'Business Management', 'Customer Service', 'Supply Chain'],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      id: 4,
-      title: 'Freelance Website Developer',
-      company: 'Self-Employed',
-      location: 'Gujranwala, Pakistan',
-      period: 'October 2024 - Present',
-      type: 'Freelance',
-      current: true,
-      description: 'Freelance web development for local professionals and small businesses, including portfolio and business websites.',
-      achievements: [
-        'Built and deployed responsive websites for clients such as doctors and a university professor',
-        'Used HTML, CSS, JavaScript, and React depending on the project',
-        'Hosted finished sites on Vercel and Netlify'
-      ],
-      skills: ['Web Development', 'Freelancing', 'Client Management', 'Project Delivery'],
-      color: 'from-orange-500 to-red-500'
-    },
-    {
-      id: 5,
-      title: 'Freelance Blogger',
-      company: 'Leverage Info',
-      location: 'Gujranwala, Pakistan',
-      period: 'March 2024 - Present',
-      type: 'Freelance',
-      current: true,
-      description: 'Content creation and blogging services focused on technology, business, and digital marketing topics.',
-      achievements: [
-        'Created engaging and informative blog content',
-        'Researched and wrote articles on various technology topics',
-        'Maintained consistent publishing schedule',
-        'Built readership through quality content and SEO optimization'
-      ],
-      skills: ['Content Writing', 'SEO', 'Research', 'Digital Marketing'],
-      color: 'from-teal-500 to-blue-500'
-    },
-    {
-      id: 6,
-      title: 'Brand Ambassador',
-      company: 'Leverage',
-      location: 'Gujranwala, Pakistan',
-      period: 'December 2023 - Present',
-      type: 'Part-time',
-      current: true,
-      description: 'Leading social media management initiatives and creating brand identity solutions.',
-      achievements: [
-        'Spearheaded social media management to enhance brand visibility and engagement',
-        'Created unique, high-impact logos for branding and marketing campaigns',
-        'Developed comprehensive brand identity strategies',
-        'Increased social media engagement and follower growth'
-      ],
-      skills: ['Social Media Management', 'Logo Design', 'Brand Identity', 'Marketing'],
-      color: 'from-indigo-500 to-purple-500'
-    },
-    {
-      id: 7,
-      title: 'Social Media Manager & Website Developer',
-      company: 'Alpha Academy',
-      location: 'Gujranwala, Pakistan',
-      period: 'January 2022 - Present',
-      type: 'Part-time',
-      current: true,
-      description: 'Managing social media presence and developing scalable website architectures for educational institution.',
-      achievements: [
-        'Enhanced brand visibility and engagement through strategic social media management',
-        'Created impactful logos and visual branding materials',
-        'Developed and implemented scalable website architectures',
-        'Accommodated future growth and evolving business requirements'
-      ],
-      skills: ['Social Media', 'Web Development', 'Brand Design', 'Educational Technology'],
-      color: 'from-yellow-500 to-orange-500'
-    },
-    {
-      id: 8,
-      title: 'Sales And Marketing Specialist',
-      company: 'CRAFTSCODE SOLUTION',
-      location: 'Islamabad, Pakistan',
-      period: 'October 2024 - January 2025',
-      type: 'Full-time',
-      current: false,
-      description: 'Provided comprehensive website solutions and marketing strategies for client campaigns.',
-      achievements: [
-        'Developed custom landing pages optimized for email campaign traffic',
-        'Implemented conversion optimization strategies',
-        'Collaborated with marketing teams to align web solutions with campaign goals',
-        'Achieved high conversion rates for client campaigns'
-      ],
-      skills: ['Sales', 'Marketing', 'Landing Pages', 'Conversion Optimization'],
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      id: 9,
-      title: 'Website Developer',
-      company: 'APPPILLARS',
-      location: 'Gujranwala, Pakistan',
-      period: 'January 2024 - October 2024',
-      type: 'Full-time',
-      current: false,
-      description: 'Assisted in developing web applications and enhancing UI/UX functionality.',
-      achievements: [
-        'Assisted in development of web applications using JavaScript and React.js',
-        'Collaborated with developers and designers to enhance UI/UX functionality',
-        'Contributed to multiple successful project deliveries',
-        'Gained valuable experience in team-based development'
-      ],
-      skills: ['JavaScript', 'React.js', 'UI/UX', 'Team Collaboration'],
-      color: 'from-cyan-500 to-blue-500'
-    },
-    {
-      id: 10,
-      title: 'Market Research Analyst',
-      company: 'Silverlight Research Expert Network',
-      location: 'London, UK (Remote)',
-      period: 'October 2024',
-      type: 'Contract',
-      current: false,
-      description: 'Conducted comprehensive market analysis for digital marketing landscape.',
-      achievements: [
-        'Conducted comprehensive market analysis to identify trends and opportunities',
-        'Utilized data analytics tools to measure campaign performance',
-        'Optimized marketing efforts based on research findings',
-        'Provided actionable insights for strategic decision making'
-      ],
-      skills: ['Market Research', 'Data Analytics', 'Digital Marketing', 'Strategic Analysis'],
-      color: 'from-gray-500 to-gray-700'
+      skills: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS']
     }
   ]
-
-  const formatPeriod = (period) => {
-    return period
-  }
 
   return (
     <div className="min-h-screen px-6 py-12 lg:px-12 scrollbar-futuristic">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -196,14 +44,11 @@ const Experience = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Professional Experience</h1>
           </div>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-            A comprehensive overview of my professional journey, showcasing the diverse roles and
-            responsibilities that have shaped my expertise in web development, digital marketing, and business management.
+            Selected work alongside my BSc Computer Science degree at UCP Gujranwala.
           </p>
         </motion.div>
 
-        {/* Experience Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden lg:block" />
 
           <div className="space-y-8">
@@ -215,86 +60,49 @@ const Experience = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
-                {/* Timeline Dot */}
                 <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full border-4 border-background z-10 hidden lg:block" />
 
-                <Card className={`lg:ml-16 hover:shadow-lg transition-all duration-300 ${experience.current ? 'ring-2 ring-primary/20' : ''}`}>
-                  <CardHeader className="pb-4">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <CardTitle className="text-xl">{experience.title}</CardTitle>
-                          {experience.current && (
-                            <Badge className="bg-green-500 text-white">Current</Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                          <Building className="w-4 h-4" />
-                          <span className="font-medium">{experience.company}</span>
-                          <span className="text-xs">•</span>
-                          <MapPin className="w-4 h-4" />
-                          <span>{experience.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4" />
-                          <span>{formatPeriod(experience.period)}</span>
-                          <Badge variant="outline" className="ml-2">
-                            {experience.type}
-                          </Badge>
-                        </div>
+                <Card className="lg:ml-16">
+                  <CardHeader>
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <CardTitle className="text-xl">{experience.title}</CardTitle>
+                        <p className="text-primary font-medium mt-1">{experience.company}</p>
                       </div>
-                      <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${experience.color} flex items-center justify-center flex-shrink-0`}>
-                        <Briefcase className="w-8 h-8 text-white" />
+                      <div className="flex flex-wrap gap-2">
+                        {experience.current && (
+                          <Badge>Current</Badge>
+                        )}
+                        {experience.type && (
+                          <Badge variant="secondary">{experience.type}</Badge>
+                        )}
                       </div>
                     </div>
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mt-2">
+                      <span className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4" />
+                        {experience.period}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        {experience.location}
+                      </span>
+                    </div>
                   </CardHeader>
-
-                  <CardContent>
-                    <div className="space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {experience.description}
-                      </p>
-
-                      {/* Key Achievements */}
-                      <div>
-                        <h4 className="font-semibold mb-3 flex items-center gap-2">
-                          <Award className="w-4 h-4 text-primary" />
-                          Key Achievements
-                        </h4>
-                        <ul className="space-y-2">
-                          {experience.achievements.map((achievement, achIndex) => (
-                            <motion.li
-                              key={achIndex}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.3, delay: 0.2 + achIndex * 0.05 }}
-                              className="flex items-start gap-3 text-sm text-muted-foreground"
-                            >
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                              <span>{achievement}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Skills */}
-                      <div>
-                        <h4 className="font-semibold mb-3">Skills & Technologies</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {experience.skills.map((skill, skillIndex) => (
-                            <motion.div
-                              key={skill}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ duration: 0.3, delay: 0.3 + skillIndex * 0.05 }}
-                            >
-                              <Badge variant="secondary" className="text-xs">
-                                {skill}
-                              </Badge>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">{experience.description}</p>
+                    <ul className="space-y-2">
+                      {experience.achievements.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {experience.skills.map((skill) => (
+                        <Badge key={skill} variant="outline">{skill}</Badge>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
@@ -303,51 +111,24 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Experience Summary */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-16"
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-12"
         >
-          <Card className="bg-gradient-to-br from-primary/10 to-blue-600/10">
-            <CardHeader>
-              <CardTitle className="text-center flex items-center justify-center gap-2">
-                <TrendingUp className="w-6 h-6 text-primary" />
-                Career Highlights
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">2023</div>
-                  <p className="text-sm text-muted-foreground">Degree started</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">2025</div>
-                  <p className="text-sm text-muted-foreground">Freelance web work</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">2027</div>
-                  <p className="text-sm text-muted-foreground">Expected graduation</p>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-2">Open</div>
-                  <p className="text-sm text-muted-foreground">Internships, research, and roles</p>
-                </div>
-              </div>
-
-              <div className="mt-8 text-center">
-                <p className="text-muted-foreground mb-4">
-                  I am open to internships, research, graduate study, and software roles from 2027.
-                </p>
-                <Button asChild>
-                  <a href="/contact">
-                    <Users className="w-4 h-4 mr-2" />
-                    Let's Work Together
-                  </a>
-                </Button>
-              </div>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <p className="text-muted-foreground mb-4">
+                I am open to internships, research, graduate study, and software roles from 2027.
+              </p>
+              <Button asChild>
+                <a href="/contact">
+                  <Users className="w-4 h-4 mr-2" />
+                  Get in touch
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </motion.div>
@@ -357,4 +138,3 @@ const Experience = () => {
 }
 
 export default Experience
-

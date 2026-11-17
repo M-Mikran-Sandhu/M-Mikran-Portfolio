@@ -12,10 +12,8 @@ import {
   Moon,
   Linkedin,
   Github,
-  ExternalLink
 } from 'lucide-react'
 import { Button } from '@/components/ui/button.jsx'
-import InstagramVerifiedBadge from '@/components/ui/instagram-verified-badge.jsx'
 
 const Sidebar = ({ isOpen, onClose, darkMode, toggleTheme }) => {
   const location = useLocation()
@@ -44,12 +42,6 @@ const Sidebar = ({ isOpen, onClose, darkMode, toggleTheme }) => {
       label: 'GitHub',
       color: 'text-gray-400 hover:text-white'
     },
-    {
-      href: 'https://taplink.cc/mmikransandhu',
-      icon: ExternalLink,
-      label: 'All Social Links',
-      color: 'text-green-500 hover:text-green-400'
-    },
   ]
 
   return (
@@ -76,7 +68,6 @@ const Sidebar = ({ isOpen, onClose, darkMode, toggleTheme }) => {
             </div>
             <div className="flex items-center justify-center gap-2 mb-1">
               <h2 className="text-lg font-bold text-center">Muhammad Mikran Sandhu</h2>
-              <InstagramVerifiedBadge className="flex-shrink-0" size={18} />
             </div>
             <p className="text-sm text-muted-foreground text-center">@mmikransandhu</p>
 

@@ -60,7 +60,7 @@ Allow: /sitemap.xml
 # BSc Computer Science student, University of Central Punjab, Gujranwala Campus
 # Expected graduation: August 2027
 # Location: Gujranwala, Punjab, Pakistan
-# Email: contact@mikran.alphasolutions.online
+# Email: mikran.student@gmail.com
 # Website: https://mikran.alphasolutions.software
 # LinkedIn: https://www.linkedin.com/in/m-mikran-sandhu/
 # GitHub: https://github.com/M-Mikran-Sandhu
