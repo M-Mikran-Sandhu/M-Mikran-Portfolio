@@ -19,8 +19,8 @@ import { Badge } from '@/components/ui/badge.jsx'
 const About = () => {
   const personalInfo = [
     { icon: MapPin, label: 'Location', value: 'Gujranwala, Pakistan' },
-    { icon: Calendar, label: 'Experience', value: '3+ Years' },
-    { icon: Award, label: 'Certifications', value: '28 Professional' },
+    { icon: Calendar, label: 'Status', value: '7th semester, BSc CS' },
+    { icon: Award, label: 'Graduation', value: 'August 2027' },
     { icon: Globe, label: 'Languages', value: 'English, Urdu, Punjabi' }
   ]
 
@@ -43,23 +43,21 @@ const About = () => {
   ]
 
   const interests = [
-    'Web Development',
-    'UI/UX Design',
-    'Digital Marketing',
-    'Brand Identity',
-    'E-commerce Solutions',
-    'Mobile Development',
-    'SEO Optimization',
-    'Social Media Strategy'
+    'Practical machine learning',
+    'Reliable AI software',
+    'Systems software',
+    'Digital image forensics',
+    'Image analysis',
+    'Full-stack web development',
+    'Data structures and algorithms',
+    'Software engineering'
   ]
 
-  const achievements = [
-    '22+ Successful Projects Completed',
-    '98% Client Retention Rate',
-    '25+ Happy Clients Worldwide',
-    'Owner & Founder of Alpha Group',
-    '28+ Professional Certifications',
-    'Expert in Full-Stack Development'
+  const highlights = [
+    'BSc Computer Science student at UCP Gujranwala, graduating August 2027',
+    'Freelance web developer for local professionals and small businesses',
+    'Projects in image forensics, operating systems scheduling, and web development',
+    'Completed professional certificates in AI literacy, GitHub, and web skills'
   ]
 
   return (
@@ -77,7 +75,7 @@ const About = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">About Me</h1>
           </div>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-            Get to know more about my journey, values, and what drives me to create exceptional digital experiences.
+            I am a Computer Science and AI student at UCP Gujranwala, graduating in August 2027, and I am looking for internships, research, graduate study, and jobs from 2027.
           </p>
         </motion.div>
 
@@ -99,21 +97,19 @@ const About = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-muted-foreground leading-relaxed">
-                    I am a passionate Software Developer and Owner of Alpha Group with expertise in modern web technologies,
-                    digital marketing, and comprehensive business solutions. My passion lies in creating visually compelling
-                    designs, optimizing digital presence, and implementing cutting-edge technologies for enhanced business growth.
+                    I am a BSc Computer Science student at the University of Central Punjab, Gujranwala Campus.
+                    I am in my seventh semester and expect to graduate in August 2027. Alongside my degree I
+                    do freelance web development, mostly building sites for local professionals and small businesses.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    With over 3 years of experience in the industry, I have successfully completed 22+ projects
-                    for diverse clients, ranging from small businesses to established companies. I specialize in
-                    building scalable web applications using React, Node.js, and modern development frameworks,
-                    creating engaging user interfaces, and developing comprehensive digital solutions.
+                    I care about how software actually works, not only how it looks. My recent work includes
+                    digital image forensics, real-time process scheduling, and access-control tooling, as well as
+                    React and Flask web applications. I want to go further in computer science and AI, especially
+                    in making software systems reliable.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    As the owner of Alpha Group, I lead a team dedicated to helping businesses thrive in
-                    the digital world through expert services and innovative solutions. With 28+ professional
-                    certifications and a commitment to excellence, my approach combines technical expertise
-                    with creative vision to deliver results that exceed expectations.
+                    I am open to internships, research opportunities, graduate (MSc) study, scholarships,
+                    and software roles from 2027, in any country.
                   </p>
                 </CardContent>
               </Card>
@@ -169,8 +165,7 @@ const About = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    My interests span across various aspects of digital technology and design.
-                    I'm constantly exploring new trends and technologies to stay at the forefront of the industry.
+                    These are the areas I want to keep studying and building in, both in coursework and in future internships or graduate study.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {interests.map((interest, index) => (
@@ -190,7 +185,7 @@ const About = () => {
               </Card>
             </motion.div>
 
-            {/* Key Achievements */}
+            {/* Highlights */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -200,12 +195,12 @@ const About = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Award className="w-5 h-5 text-primary" />
-                    Key Achievements
+                    Highlights
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-4">
-                    {achievements.map((achievement, index) => (
+                    {highlights.map((achievement, index) => (
                       <motion.div
                         key={achievement}
                         initial={{ opacity: 0, x: -20 }}
@@ -307,20 +302,20 @@ const About = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">22+</div>
-                    <p className="text-sm text-muted-foreground">Projects Completed</p>
+                    <div className="text-2xl font-bold text-primary">BSc CS</div>
+                    <p className="text-sm text-muted-foreground">UCP Gujranwala</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">25+</div>
-                    <p className="text-sm text-muted-foreground">Happy Clients</p>
+                    <div className="text-2xl font-bold text-primary">7th</div>
+                    <p className="text-sm text-muted-foreground">Semester</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">98%</div>
-                    <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                    <div className="text-2xl font-bold text-primary">2027</div>
+                    <p className="text-sm text-muted-foreground">Graduation</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-primary">28+</div>
-                    <p className="text-sm text-muted-foreground">Certifications</p>
+                    <div className="text-2xl font-bold text-primary">3.1</div>
+                    <p className="text-sm text-muted-foreground">CGPA / 4.0</p>
                   </div>
                 </CardContent>
               </Card>
@@ -334,9 +329,9 @@ const About = () => {
             >
               <Card className="bg-gradient-to-br from-primary/10 to-blue-600/10">
                 <CardContent className="p-6 text-center">
-                  <h3 className="font-semibold mb-2">Let's Work Together</h3>
+                  <h3 className="font-semibold mb-2">Get in touch</h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Ready to bring your ideas to life? Let's discuss your next project.
+                    I am open to internships, research, graduate study, and roles from 2027.
                   </p>
                   <Button className="w-full" asChild>
                     <a href="/contact">Get In Touch</a>

@@ -9,11 +9,10 @@
         "Mikran Developer",
         "M Mikran Sandhu"
     ],
-    "description": "Expert Software Developer and Owner of Alpha Group based in Gujranwala, Pakistan. Specializing in React.js, Node.js, and full-stack development with 28+ professional certifications and 22+ successful projects. Available for consultation and project development.",
-    "jobTitle": "Software Developer & Owner of Alpha Group",
-    "url": "https://mikran.alphasolutions.online",
-    "image": "https://mikran.alphasolutions.online/MMS%20PIC.jpg",
-    "telephone": "+923494206922",
+    "description": "BSc Computer Science student at the University of Central Punjab, Gujranwala Campus, graduating August 2027. Open to internships, research, graduate study, and jobs from 2027.",
+    "jobTitle": "Computer Science Student",
+    "url": "https://mikran.alphasolutions.software",
+    "image": "https://mikran.alphasolutions.software/MMS%20PIC.jpg",
     "email": "contact@mikran.alphasolutions.online",
     "address": {
         "@type": "PostalAddress",
@@ -29,31 +28,20 @@
         "https://zcal.co/muhammad-mikran"
     ],
     "knowsAbout": [
-        "React.js",
-        "Node.js",
+        "Computer Science",
+        "Artificial Intelligence",
+        "Python",
         "JavaScript",
-        "TypeScript",
-        "Full Stack Development",
+        "React",
+        "Flask",
         "Web Development",
-        "Mobile Development",
-        "UI/UX Design",
-        "Digital Solutions",
-        "MongoDB",
-        "Express.js",
-        "Tailwind CSS",
-        "Framer Motion",
-        "API Development",
-        "Database Design",
-        "E-commerce Development",
-        "Progressive Web Apps",
-        "Single Page Applications",
-        "Microservices",
-        "Cloud Integration"
+        "Systems Software",
+        "Digital Image Forensics"
     ],
     "hasOccupation": {
         "@type": "Occupation",
-        "name": "Software Developer",
-        "description": "Full-stack software developer specializing in modern web technologies",
+        "name": "Computer Science Student",
+        "description": "BSc Computer Science student and freelance web developer",
         "occupationLocation": {
             "@type": "City",
             "name": "Gujranwala",
@@ -67,11 +55,11 @@
             }
         },
         "skills": [
-            "React",
-            "Node.js",
+            "Python",
             "JavaScript",
-            "Full Stack Development",
-            "Web Development"
+            "React",
+            "Web Development",
+            "Computer Science"
         ]
     },
     "worksFor": {
@@ -87,22 +75,13 @@
     },
     "alumniOf": {
         "@type": "EducationalOrganization",
-        "name": "University of Gujrat",
+        "name": "University of Central Punjab",
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "Pakistan"
         }
     },
     "contactPoint": [
-        {
-            "@type": "ContactPoint",
-            "telephone": "+923494206922",
-            "contactType": "customer service",
-            "availableLanguage": [
-                "English",
-                "Urdu"
-            ]
-        },
         {
             "@type": "ContactPoint",
             "email": "contact@mikran.alphasolutions.online",
@@ -113,11 +92,6 @@
             "url": "https://zcal.co/muhammad-mikran",
             "contactType": "appointment booking"
         }
-    ],
-    "award": [
-        "28+ Professional Certifications in Software Development",
-        "22+ Successful Project Completions",
-        "3+ Years Professional Experience"
     ],
     "serviceArea": {
         "@type": "Place",

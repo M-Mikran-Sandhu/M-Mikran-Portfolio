@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   Mail,
-  Phone,
   MapPin,
   Linkedin,
   Github,
@@ -31,13 +30,6 @@ const Contact = () => {
       value: 'sandhumikran@gmail.com',
       href: 'mailto:sandhumikran@gmail.com',
       color: 'text-blue-500'
-    },
-    {
-      icon: Phone,
-      label: 'WhatsApp',
-      value: '+92 349 420 6922',
-      href: 'https://wa.me/923494206922',
-      color: 'text-green-500'
     },
     {
       icon: MapPin,
@@ -105,8 +97,8 @@ const Contact = () => {
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Get In Touch</h1>
           </div>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
-            Ready to start your next project? I'd love to hear from you.
-            Let's discuss how we can work together to bring your ideas to life.
+            I am open to internships, research opportunities, graduate study, and software roles from 2027.
+            The best way to reach me is by email.
           </p>
         </motion.div>
 
@@ -125,9 +117,8 @@ const Contact = () => {
                     Chat with My AI Assistant
                   </CardTitle>
                   <p className="text-sm text-muted-foreground">
-                    Get instant answers about Muhammad Mikran Sandhu, Alpha Group owner and software developer from Gujranwala, Pakistan.
-                    Ask about React development, Node.js expertise, 28+ certifications, 22+ projects, or schedule a meeting at zcal.co/muhammad-mikran.
-                    Available 24/7 to help you learn more about professional services at mikran.alphasolutions.online.
+                    Ask about my Computer Science studies at UCP Gujranwala, my projects, or opportunities from 2027.
+                    You can also email me or visit my GitHub profile.
                   </p>
                 </CardHeader>
                 <CardContent>
@@ -189,20 +180,11 @@ const Contact = () => {
                 <CardHeader>
                   <CardTitle>Quick Contact</CardTitle>
                   <p className="text-sm text-muted-foreground">
-                    Ready to start your project? Contact me directly through your preferred method.
+                    The best way to reach me is by email.
                   </p>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Button
-                      className="w-full bg-green-600 hover:bg-green-700 text-white"
-                      asChild
-                    >
-                      <a href="https://wa.me/923494206922" target="_blank" rel="noopener noreferrer">
-                        <Phone className="w-4 h-4 mr-2" />
-                        WhatsApp Me
-                      </a>
-                    </Button>
                     <Button
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                       asChild
@@ -210,6 +192,16 @@ const Contact = () => {
                       <a href="mailto:contact@mikran.alphasolutions.online">
                         <Mail className="w-4 h-4 mr-2" />
                         Send Email
+                      </a>
+                    </Button>
+                    <Button
+                      className="w-full"
+                      variant="outline"
+                      asChild
+                    >
+                      <a href="https://github.com/M-Mikran-Sandhu" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        GitHub
                       </a>
                     </Button>
                   </div>

@@ -24,10 +24,10 @@ const Sidebar = ({ isOpen, onClose, darkMode, toggleTheme }) => {
     { path: '/', icon: Home, label: 'Home', badge: null },
     { path: '/about', icon: User, label: 'About', badge: null },
     { path: '/skills', icon: Code, label: 'Skills', badge: null },
-    { path: '/projects', icon: FolderOpen, label: 'Projects', badge: '22' },
+    { path: '/projects', icon: FolderOpen, label: 'Projects', badge: null },
     { path: '/experience', icon: Briefcase, label: 'Experience', badge: null },
     { path: '/education', icon: GraduationCap, label: 'Education', badge: null },
-    { path: '/certificates', icon: Award, label: 'Certificates', badge: '28' },
+    { path: '/certificates', icon: Award, label: 'Certificates', badge: null },
     { path: '/contact', icon: Mail, label: 'Contact', badge: null },
   ]
 

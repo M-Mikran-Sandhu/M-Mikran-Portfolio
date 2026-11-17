@@ -17,42 +17,20 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Owner & Full Stack Developer',
-      company: 'Alpha Group of Companies',
+      title: 'Freelance Web Developer',
+      company: 'Alpha Solutions',
       location: 'Gujranwala, Pakistan',
-      period: '2025 - Present',
-      type: 'Full-time',
+      period: '2025 to Present',
+      type: 'Freelance',
       current: true,
-      description: 'Founded and currently leading Alpha Solutions, a comprehensive digital solutions company that helps businesses thrive in the digital world through expert services and innovative solutions.',
+      description: 'Independent web development work under Alpha Solutions, building and deploying websites for local professionals and small businesses.',
       achievements: [
-        'Designed and developed responsive websites using React, HTML5, CSS3, JavaScript, and Tailwind CSS',
-        'Implemented comprehensive digital marketing strategies including SEO optimization and social media marketing',
-        'Developed e-commerce solutions with payment integration and inventory management systems',
-        'Created mobile-responsive designs and cross-platform applications for iOS and Android',
-        'Established cloud infrastructure and deployment solutions with DevOps automation',
-        'Maintained a 98% client retention rate through dedicated account management',
-        'Received industry recognition for excellence in web development and digital innovation'
+        'Designed and developed responsive websites using React, HTML, CSS, JavaScript, and Tailwind CSS',
+        'Deployed client sites on platforms such as Vercel and Netlify',
+        'Built utility and coursework apps, including a GPA calculator and a store front end'
       ],
-      skills: ['React.js', 'Node.js', 'Digital Marketing', 'E-commerce', 'Project Management', 'Client Relations'],
+      skills: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Client Work'],
       color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      id: 2,
-      title: 'Sales Agent & Website Developer',
-      company: 'AH Logistics Dispatch & Solution',
-      location: 'Gujranwala, Pakistan',
-      period: 'April 2025 - Present',
-      type: 'Part-time',
-      current: true,
-      description: 'Responsible for generating leads, building client relationships, and developing custom web solutions for logistics services.',
-      achievements: [
-        'Generated leads and built strong client relationships for logistics services',
-        'Presented value propositions and successfully closed deals',
-        'Increased client website traffic by an average of 30% through strategic SEO implementation',
-        'Integrated custom web development solutions with performance optimization techniques'
-      ],
-      skills: ['Sales', 'Lead Generation', 'SEO', 'Web Development', 'Client Relations'],
-      color: 'from-green-500 to-emerald-500'
     },
     {
       id: 3,
@@ -80,12 +58,11 @@ const Experience = () => {
       period: 'October 2024 - Present',
       type: 'Freelance',
       current: true,
-      description: 'Providing freelance web development services to diverse clients including e-commerce, portfolio, small business, and dispatch company websites.',
+      description: 'Freelance web development for local professionals and small businesses, including portfolio and business websites.',
       achievements: [
-        'Developed and deployed 5+ responsive websites for diverse clients',
-        'Achieved an average client satisfaction rating of 4.8/5',
-        'Specialized in e-commerce, portfolio, and business websites',
-        'Delivered projects on time and within budget consistently'
+        'Built and deployed responsive websites for clients such as doctors and a university professor',
+        'Used HTML, CSS, JavaScript, and React depending on the project',
+        'Hosted finished sites on Vercel and Netlify'
       ],
       skills: ['Web Development', 'Freelancing', 'Client Management', 'Project Delivery'],
       color: 'from-orange-500 to-red-500'
@@ -343,26 +320,26 @@ const Experience = () => {
             <CardContent>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">3+</div>
-                  <p className="text-sm text-muted-foreground">Years of Experience</p>
+                  <div className="text-3xl font-bold text-primary mb-2">2023</div>
+                  <p className="text-sm text-muted-foreground">Degree started</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
-                  <p className="text-sm text-muted-foreground">Professional Roles</p>
+                  <div className="text-3xl font-bold text-primary mb-2">2025</div>
+                  <p className="text-sm text-muted-foreground">Freelance web work</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                  <p className="text-sm text-muted-foreground">Projects Completed</p>
+                  <div className="text-3xl font-bold text-primary mb-2">2027</div>
+                  <p className="text-sm text-muted-foreground">Expected graduation</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                  <p className="text-sm text-muted-foreground">Client Satisfaction</p>
+                  <div className="text-3xl font-bold text-primary mb-2">Open</div>
+                  <p className="text-sm text-muted-foreground">Internships, research, and roles</p>
                 </div>
               </div>
 
               <div className="mt-8 text-center">
                 <p className="text-muted-foreground mb-4">
-                  Ready to bring my expertise to your next project?
+                  I am open to internships, research, graduate study, and software roles from 2027.
                 </p>
                 <Button asChild>
                   <a href="/contact">

@@ -1,13 +1,13 @@
 import { Helmet } from 'react-helmet-async'
 
 const SEOHead = ({
-    title = "Muhammad Mikran Sandhu | Software Developer & Alpha Group Owner",
-    description = "Professional software developer and owner of Alpha Group. Expert in React, Node.js, full-stack development, and digital solutions. 28+ certifications, 22+ successful projects. Contact: +92 349 420 6922",
-    keywords = "Muhammad Mikran Sandhu, Alpha Group, software developer, web developer, React developer, Node.js, full stack developer, Gujranwala developer, Pakistan developer, digital solutions, web design, Alpha Solutions",
-    canonical = "https://mikran.alphasolutions.online",
-    image = "https://mikran.alphasolutions.online/MMS%20PIC.jpg"
+    title = "Muhammad Mikran Sandhu | Computer Science and AI Student",
+    description = "BSc Computer Science student at the University of Central Punjab, Gujranwala Campus, graduating August 2027. Open to internships, research, graduate study, and jobs from 2027.",
+    keywords = "Muhammad Mikran Sandhu, Computer Science student, AI, University of Central Punjab, Gujranwala, web developer, internships, graduate study, React, Python, Flask",
+    canonical = "https://mikran.alphasolutions.software",
+    image = "https://mikran.alphasolutions.software/MMS%20PIC.jpg"
 }) => {
-    const siteUrl = "https://mikran.alphasolutions.online"
+    const siteUrl = "https://mikran.alphasolutions.software"
 
     return (
         <Helmet>
@@ -56,7 +56,7 @@ const SEOHead = ({
                     "@context": "https://schema.org",
                     "@type": "Person",
                     "name": "Muhammad Mikran Sandhu",
-                    "jobTitle": "Software Developer & Owner of Alpha Group",
+                    "jobTitle": "Computer Science Student",
                     "url": siteUrl,
                     "image": image,
                     "address": {
@@ -65,7 +65,6 @@ const SEOHead = ({
                         "addressRegion": "Punjab",
                         "addressCountry": "Pakistan"
                     },
-                    "telephone": "+923494206922",
                     "email": "contact@mikran.alphasolutions.online",
                     "sameAs": [
                         "https://www.linkedin.com/in/m-mikran-sandhu/",
@@ -73,8 +72,8 @@ const SEOHead = ({
                         "https://taplink.cc/mmikransandhu"
                     ],
                     "knowsAbout": [
-                        "React", "Node.js", "JavaScript", "Full Stack Development",
-                        "Web Development", "UI/UX Design", "Digital Marketing", "SEO"
+                        "Computer Science", "Artificial Intelligence", "Python", "React",
+                        "JavaScript", "Web Development", "Systems Software"
                     ],
                     "worksFor": {
                         "@type": "Organization",
