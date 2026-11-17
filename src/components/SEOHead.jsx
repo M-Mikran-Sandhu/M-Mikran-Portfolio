@@ -65,11 +65,10 @@ const SEOHead = ({
                         "addressRegion": "Punjab",
                         "addressCountry": "Pakistan"
                     },
-                    "email": "contact@mikran.alphasolutions.online",
+                    "email": "mikran.student@gmail.com",
                     "sameAs": [
                         "https://www.linkedin.com/in/m-mikran-sandhu/",
-                        "https://github.com/m-mikran-sandhu",
-                        "https://taplink.cc/mmikransandhu"
+                        "https://github.com/M-Mikran-Sandhu"
                     ],
                     "knowsAbout": [
                         "Computer Science", "Artificial Intelligence", "Python", "React",
@@ -77,8 +76,7 @@ const SEOHead = ({
                     ],
                     "worksFor": {
                         "@type": "Organization",
-                        "name": "Alpha Group",
-                        "url": "https://alphagroup.alphasolutions.online"
+                        "name": "Alpha Solutions"
                     },
                     "alumniOf": {
                         "@type": "EducationalOrganization",

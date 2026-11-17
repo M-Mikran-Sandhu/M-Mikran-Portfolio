@@ -334,13 +334,7 @@ const About = () => {
                     I am open to internships, research, graduate study, and roles from 2027.
                   </p>
                   <Button className="w-full" asChild>
-                    <a href="/contact">Get In Touch</a>
-                  </Button>
-                  <Button variant="outline" className="w-full mt-2" asChild>
-                    <a href="https://zcal.co/muhammad-mikran" target="_blank" rel="noopener noreferrer">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      Schedule Meeting
-                    </a>
+                    <a href="/contact">Get in touch</a>
                   </Button>
                 </CardContent>
               </Card>

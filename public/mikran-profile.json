@@ -6,26 +6,22 @@
         "Mikran",
         "Muhammad Mikran",
         "Mikran Sandhu",
-        "Mikran Developer",
         "M Mikran Sandhu"
     ],
     "description": "BSc Computer Science student at the University of Central Punjab, Gujranwala Campus, graduating August 2027. Open to internships, research, graduate study, and jobs from 2027.",
     "jobTitle": "Computer Science Student",
     "url": "https://mikran.alphasolutions.software",
     "image": "https://mikran.alphasolutions.software/MMS%20PIC.jpg",
-    "email": "contact@mikran.alphasolutions.online",
+    "email": "mikran.student@gmail.com",
     "address": {
         "@type": "PostalAddress",
         "addressLocality": "Gujranwala",
         "addressRegion": "Punjab",
-        "addressCountry": "Pakistan",
-        "postalCode": "52250"
+        "addressCountry": "Pakistan"
     },
     "sameAs": [
         "https://www.linkedin.com/in/m-mikran-sandhu/",
-        "https://github.com/m-mikran-sandhu",
-        "https://taplink.cc/mmikransandhu",
-        "https://zcal.co/muhammad-mikran"
+        "https://github.com/M-Mikran-Sandhu"
     ],
     "knowsAbout": [
         "Computer Science",
@@ -64,14 +60,7 @@
     },
     "worksFor": {
         "@type": "Organization",
-        "name": "Alpha Group",
-        "url": "https://alphagroup.alphasolutions.online",
-        "description": "Software development and digital solutions company"
-    },
-    "owns": {
-        "@type": "Organization",
-        "name": "Alpha Group",
-        "url": "https://alphagroup.alphasolutions.online"
+        "name": "Alpha Solutions"
     },
     "alumniOf": {
         "@type": "EducationalOrganization",
@@ -84,18 +73,8 @@
     "contactPoint": [
         {
             "@type": "ContactPoint",
-            "email": "contact@mikran.alphasolutions.online",
-            "contactType": "customer service"
-        },
-        {
-            "@type": "ContactPoint",
-            "url": "https://zcal.co/muhammad-mikran",
-            "contactType": "appointment booking"
+            "email": "mikran.student@gmail.com",
+            "contactType": "email"
         }
-    ],
-    "serviceArea": {
-        "@type": "Place",
-        "name": "Pakistan",
-        "description": "Provides software development services locally and internationally"
-    }
+    ]
 }
